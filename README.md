@@ -1,3 +1,3 @@
 # Tock Profiling
 
-Please see [report](Report.pdf) for details.
+Please see [report](reports/first.pdf) for details.
