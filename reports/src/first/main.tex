@@ -110,7 +110,7 @@ The CPU pipeline does not use a branch predictor, so there is some overhead for 
 %Procedure call overhead: Report as a function of number of integer arguments from 0-7. What is the increment overhead of an argument?
 \subsubsection{Procedure call overhead}
 
-Per RISC-V calling convention (\usl{https://github.com/riscv/riscv-elf-psabi-doc/blob/master/riscv-elf.md}), the only registers that need to be saved by the callee are registers s0-s11 (the stack pointer is unmodified on a procedure call, and does not need to be saved). Arguments are passed in via the a0-a7 registers for integer values (this CPU core does not support floating point instructions). If there are more than eight integer/pointer arguments, the first eight are passed in via registers, and the remainder are passed in via the stack.
+Per RISC-V calling convention (\url{https://github.com/riscv/riscv-elf-psabi-doc/blob/master/riscv-elf.md}), the only registers that need to be saved by the callee are registers s0-s11 (the stack pointer is unmodified on a procedure call, and does not need to be saved). Arguments are passed in via the a0-a7 registers for integer values (this CPU core does not support floating point instructions). If there are more than eight integer/pointer arguments, the first eight are passed in via registers, and the remainder are passed in via the stack.
 
 FIXME Need to make sure to avoid compiler inlining when benchmarking overhead of procedure call
 
