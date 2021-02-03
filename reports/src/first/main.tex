@@ -5,7 +5,7 @@
 \addbibresource{bibliography.bib} %Imports bibliography file
 \usepackage{hyperref}
 
-\title{Benchmarking the Tock operating system for embedded platforms \\[0.2em]\smaller{} CSE 221 Project}
+\title{First draft: Benchmarking the Tock operating system for embedded platforms \\[0.2em]\smaller{} CSE 221 Project}
 \author{Maximilian Apodaca, Grant Jiang, Gabriel Marcano}
 \date{\today}
 
@@ -16,29 +16,33 @@
 \section{Introduction}
 
 %Goals of the project
-The goal of this project is to measure CPU and memory operations of the Tock operating system \cite{levy17multiprogramming}. The Tock operating system is undergoing a syscall interface change, so it would be beneficial to benchmark the operating system before the change to form a baseline to compare the changes against. This project will provide that baseline. %https://discord.com/channels/796448392842706954/796448392842706958/801877146548043806
+The goal of this project is to measure CPU and memory operations of the Tock operating system \cite{levy17multiprogramming}. The Tock operating system is undergoing a system call interface change, so it would be beneficial to benchmark the operating system before the change to form a baseline to compare the changes against. This project will provide that baseline. %https://discord.com/channels/796448392842706954/796448392842706958/801877146548043806
 
 %State the language you used to implement your measurements, and the compiler version and optimization settings you used to compile your code.
 Tock is implemented in Rust and supports userland applications written Rust and C/C++. The benchmarks for this project will be written in C/C++ and Rust (FIXME will we do all? Or just a select few). The generated binaries will be compared to ensure that the critical parts of the benchmarks are similar enough in the implementations using different languages (FIXME would time be better spent elsewhere?). %need to see if there's a difference
 
-The following compilers and flags are used for building the benchmarks: TBD
+The following compilers and flags are used for building the benchmarks:
+\begin{itemize}
+    \item TBD
+\end{itemize}
 
 %If you are measuring in an unusual environment (e.g., virtual machine), discuss the implications of the environment on the measurement task (e.g., additional variance that is difficult for you to control for).
 %Did you say we can get the cycle count instead?
 Benchmark application development will take place on Linux x86\_64 platforms, leveraging QEMU to simulate the OpenTitan platform, and the final results will be acquired by running the benchmarks on an OpenTitan Earl Grey microcontroller instantiation on a Nexys Video Artix-7 FPGA \cite{opentitangithub}. Running the tests on the FPGA instead of on the simulators should help reduce uncertainty introduced in timing due to QEMU running as a userspace application (and subject to the sharing of systems resources and time). %Currently, accessing the cache is the same time as memory due to single cycle CPU. Maybe later it'll matter.
+
 %who performed which experiments Gabe's email: As far as I am aware, there isn't any networking support, or graphics, but it appears the board does support some IO peripherals, including some AES hardware, some flash memory, and possibly USB as well (I'm not sure yet exactly what drivers the OS has for USB, but the softcore does support USB).
 (FIXME We have yet to divide up who performs what experiment, as there is only one board which Gabe has.)
 %something about sd card and drivers... lbench hbench...
 
 %Estimate the amount of time you spent on this project.
-This project lasts for the duration of the quarter (10 weeks). We each plan to spend at most 10 hours per week (FIXME hopefully not that much a week, but we will see, setup has taken quite some time for Gabe).
+This project lasts for the duration of the quarter (10 weeks). We each plan to spend at most 10 hours per week.
 
 \section{Machine Description}
 
 \subsection{Hardware}
-The FPGA bitstream loaded onto the Nexys Video development board implements an OpenTitan Earl Grey microcontroller (FIXME citation to docs?). The CPU of the microcontroller is an Ibex RISC-V 32-bit CPU, configured to run at 100 MHz, with 4 kB of instruction cache and no data cache (FIXME what about pipeline depth and branch prediction?). The CPU does not support virtual memory, instead implementing Physical Memory Protection (PMP) per the RISC-V Privileged Specification, version 1.11 \cite{riscv-priv}. The CPU PMP is configured to support up to 16 memory protection regions.
+The FPGA bitstream loaded onto the Nexys Video development board implements an OpenTitan Earl Grey microcontroller (\url{https://docs.opentitan.org/hw/top_earlgrey/doc/}). The CPU of the microcontroller is an Ibex RISC-V 32-bit CPU, configured to run at 100 MHz, with 4 kB of instruction cache and no data cache. It has a two stage pipeline consisting of a an Instruction Fetch (IF) stage followed by an Instruction Decode and Execute (ID/EX) stage (some instructions may spend more than one cycle in the execute stage). As configured for the Earl Grey microcontroller, there is no branch prediction (there is no branch penalty if the branch is not taken). The CPU does not support virtual memory, instead implementing Physical Memory Protection (PMP) per the RISC-V Privileged Specification, version 1.11 \cite{riscv-priv}. The CPU PMP is configured to support up to 16 memory protection regions. (for more information on stalls, see \url{https://github.com/lowRISC/ibex/blob/master/doc/03\_reference/pipeline\_details.rst}). There is no floating point unit attached to this CPU.
 
-All of the memory used by the system is kept within the microcontroller; it does not support interfacing with external memory. The microcontroller has 16 kB of ROM used to store the primary boot loader, 512kB of embedded flash (e-flash) to store the actual program data and the operating system, and 64 kB of SRAM as scratch space. It takes one cycle to access data from SRAM, and currently also one cycle to read from ROM and e-flash (FIXME confirm this, I know flash is emulated, and that for a long time they had cache disabled, probably because of single cycle memory access timing). ROM, e-flash, and SRAM are mapped to the processors address space and can be accessed directly by the microcontroller.
+All of the memory used by the system is kept within the microcontroller; it does not support interfacing with external memory. The microcontroller has 16 kB of ROM used to store the primary boot loader, 512kB of embedded flash (e-flash) to store the actual program data (such as the operating system and application programs and data), and 64 kB of SRAM as scratch space. It takes one cycle to access data from SRAM, and currently also one cycle to read from ROM and e-flash (FIXME confirm this, I know flash is emulated, and that for a long time they had cache disabled, probably because of single cycle memory access timing). ROM, e-flash, and SRAM are mapped to the processors address space and can be accessed directly by the CPU.
 
 The Earl Grey microcontroller supports GPIO, SPI, UART, and JTAG interfaces to interface with it. Internally, it uses a customized data bus to connect all internal peripherals to the CPU (TLUL bus interconnect). (FIXME what is the bandwidth of the different components?)
 
@@ -46,15 +50,19 @@ We have done the testing on version X (FIXME need to settle on a version of the 
 
 \subsection{Operating system}
 
-The operating system Tock is an "embedded operating system designed for running multiple concurrent, mutually distrustful applications on Cortex-M and RISC-V based embedded platforms" \cite{tockgithub}. The majority of the operating system (FIXME or all? Any assembly?) is written in Rust, with most parts of the kernel, including all drivers (called capsules), written in safe Rust, and only low level portions hardware specific components written in unsafe Rust. The kernel uses the Ibex PMP provided by the Earl Grey microcontroller to segregate running applications from each other.
+The operating system Tock is an "embedded operating system designed for running multiple concurrent, mutually distrustful applications on Cortex-M and RISC-V based embedded platforms" \cite{tockgithub}. The majority of the operating system is written in Rust, with most parts of the kernel, including all drivers (called capsules), written in safe Rust, and only low level portions hardware specific components written in unsafe Rust and small amounts of assembly language. The kernel uses the Ibex PMP provided by the Earl Grey microcontroller to segregate running userland applications from each other.
 
-The operating system loads applications from e-flash on boot, and there is no real way (FIXME really?) to load applications dynamically after booting. Applications run preemptively, while kernel level instructions (capsules/drivers and underlying kernel code) execute cooperatively.
+The operating system loads applications from e-flash on boot, and there is no way currently to load new applications dynamically the initial loading of applications. Applications run preemptively, while kernel level instructions (capsules/drivers and underlying kernel code) execute cooperatively.
 
-This version supports the original version of the system call interface to the Tock operating system. (FIXME need to determine what version/release/commit of Tock to use).
+This version supports the original version of the system call interface to the Tock operating system. (FIXME need to determine what commit of Tock to use).
 
-The operating system was built using the following compiler and linker: TBD, some kind of LLVM 11 or 12 and a modern enough clang
+The operating system was built using the following compiler and linker:
+\begin{itemize}
+    \item TBD, some kind of LLVM 11 or 12 and a modern enough clang
+\end{itemize}
 
-\section{Operations}
+% Measurement overhead: Report the overhead of reading time, and report the overhead of using a loop to measure many iterations of an operation.
+\section{Operations and Methodology}
 
 The operations benchmarked for this project can be grouped the following categories:
 
@@ -68,69 +76,86 @@ The operations benchmarked for this project can be grouped the following categor
 
 There is no networking support in the Earl Grey microcontroller.
 
-This section contains the methodologies and results for each of these categories.
+This section contains the methodologies and results for each of these categories. Benchmarking methods are inspired by the approaches taken by lmbench \cite{lmbench} and hbench \cite{hbench}.
 
 %The goal of an embedded operating system is to keep overhead low as embedded systems tend to run on slower hardware. For example, a modern AMD CPU (https://www.eembc.org/viewer/?benchmark\_seq=13194) is around 60 times faster per MHz than the Earl Grey microcontroller \cite{earlgrey-docs} CPU used for this project. Overhead was computed by running a series of micro-benchmarks to measure common operations. 
 
 \subsection{CPU, scheduling, and OS services}
 
-%CPU, Scheduling, and OS Services
-    %Measurement overhead: Report the overhead of reading time, and report the overhead of using a loop to measure many iterations of an operation.
-    %Procedure call overhead: Report as a function of number of integer arguments from 0-7. What is the increment overhead of an argument?
-    %System call overhead: Report the cost of a minimal system call. How does it compare to the cost of a procedure call? Note that some operating systems will cache the results of some system calls (e.g., idempotent system calls like getpid), so only the first call by a process will actually trap into the OS.
-    %Task creation time: Report the time to create and run both a process and a kernel thread (kernel threads run at user-level, but they are created and managed by the OS; e.g., pthread_create on modern Linux will create a kernel-managed thread). How do they compare?
-    %Context switch time: Report the time to context switch from one process to another, and from one kernel thread to another. How do they compare? In the past students have found using blocking pipes to be useful for forcing context switches. (For insight into why a context switch can be much more expensive than a procedure call, consider the evolution of the Linux kernel trap on x86.) 
+libtock-c and libtock-rs provide the runtime interface to the OS for applications. 
 
-libtock-c and libtock-rs provide the runtime interface to the OS for applications.
+%Measurement overhead: Report the overhead of reading time, and report the overhead of using a loop to measure many iterations of an operation.
+\subsubsection{Time measurement overhead} \label{subsubsec:time-measurement}
 
-\subsubsection{Time measurement overhead}
+Timing information is accessible via a system call for driver 0, command 2 to get the current tick count of the alarm driver. The frequency of the alarm driver is given by a system call for driver 0, command 1. See the \nameref{sec:syscalls} section for more information about system calls. libtock-c exposes this system call through the \texttt{alarm\_read()} function, and libtock-rs exposes it through the \texttt{alarm\_read()}. (FIXME-- need to figure out if the alarm driver uses the system clock or something else for timing... if not, we might have to dig deeper to use instruction counter support. We can use $RDCYCLE$ and $RDCYCLEH$ also).
 
-Timing information is accessible via a system call for driver 0, command 2 to get the current tick count of the alarm driver. The frequency of the alarm driver is given by a system call for driver 0, command 1. See the \nameref{sec:syscalls} section for more information about system calls. libtock-c exposes this system call through the \texttt{alarm\_read()} function, and libtock-rs exposes it through the \texttt{alarm\_read()}.
+Timing measurement overhead is is done by acquiring the tick frequency and then calling the timing system call many times in quick succession (without looping, to avoid accounting for looping overhead). The difference between every two timing calls is the overhead overhead incurred by measuring time (FIXME anything about caching we should worry about?).
 
-Timing measurement overhead is is done by acquiring the tick frequency and then calling the timing system call many times in quick succession (without looping, to avoid accounting for looping overhead).
+FIXME or
 
-FIXME do we want to use direct ASM to cut out the syscall overhead? Can dissasemble assembly from optimized code to see if the call is optimized out
+To measure the measurement overhead we repeatedly start and stop and start the measurement and measure the increase in time of each additional start and stop.
+
+FIXME We should disassemble a test binary to see if procedure calls are optimized out. If not, we should do this test in an assembly language portion.
 
 \subsubsection{Loop overhead}
 
-Nothing special about loops (FIXME need to check branch prediction)
-
-For testing looping overhead, FIXME what corner cases do we want to try to cover? We can try something like:
+The CPU pipeline does not use a branch predictor, so there is some overhead for every branch taken (there is no stalls in the pipeline added for a branch that is not taken).
 \begin{itemize}
     \item A simple loop
     \item A forcefully alternating loop
-    \item More complicated loops (to test the depth of the branch predictor, if there is one)
+    \item More complicated loops (to confirm the presence or absence of a branch predictor)
+    \item Large loops to probe for the existence and behavior of the instruction cache
+\end{itemize}
+    
+%Procedure call overhead: Report as a function of number of integer arguments from 0-7. What is the increment overhead of an argument?
+\subsubsection{Procedure call overhead}
+
+Per RISC-V calling convention (\usl{https://github.com/riscv/riscv-elf-psabi-doc/blob/master/riscv-elf.md}), the only registers that need to be saved by the callee are registers s0-s11 (the stack pointer is unmodified on a procedure call, and does not need to be saved). Arguments are passed in via the a0-a7 registers for integer values (this CPU core does not support floating point instructions). If there are more than eight integer/pointer arguments, the first eight are passed in via registers, and the remainder are passed in via the stack.
+
+FIXME Need to make sure to avoid compiler inlining when benchmarking overhead of procedure call
+
+The methodology for testing is to measure the time between a process call and the first instruction execution in the function, by timestamping before the procedure call, and once again at the start of the procedure in question. The two timestamps are then subtracted, and then the measurement overhead from the \nameref{subsubsec:time-measurement} section is subtracted from the result, providing the time it took for the procedure call to occur. Many different empty procedure calls will be made, with different numbers of arguments, to test the impact of the number of arguments passed on procedure call speed.
+
+%System call overhead: Report the cost of a minimal system call. How does it compare to the cost of a procedure call? Note that some operating systems will cache the results of some system calls (e.g., idempotent system calls like getpid), so only the first call by a process will actually trap into the OS.
+\subsubsection{System call overhead} \label{sec:syscalls}
+
+Tock supports four kinds of system calls:
+\begin{itemize}
+    \item Yield (0) - Yields execution to another process
+    \item Subscribe (1) - Used to assign callbacks to respond to system events
+    \item Command (2)- Instructs a driver to do something
+    \item Allow (3) - Share an area of userspace with the kernel
+    \item Memop (4)- Memory manipulation operations
 \end{itemize}
 
-\subsubsection{Procedure call overhead}
-(Overhead of procedure call)
+System calls can be made through libtock-c and libtock-rs, or by manually calling \texttt{ecall} with the right parameters (\url{https://github.com/tock/tock/blob/master/doc/Syscalls.md#0-yield}).
 
-If not a system call, nothing special about a procedure call. (FIXME what is the calling convention for a procedure call in RISC-V?)
+(FIXME need to test to make sure libtock* functions are optimized properly, so tests don't include procedure call overhead. Worst case scenario, we can do ecall calls manually in C or C++, and/or figure out how to do that in Rust efficiently)
 
-Need to make sure to avoid compiler inlining when benchmarking overhead of procedure call
+% Tock has two ways to cross the kernel-userspace boundary. The first is making a syscall to the kernel, the second is receiving a callback from kernel space. We intend to measure both of these directions. In this experiment we first measured the latency of making a standard syscall by using the memop syscall is it is the most lightweight one. Then we can use a simple capsule to redirect a syscall as a callback to measure the kernel to userspace system call.
+FIXME The kernel calling userspace functions in the form of a callback are not really system calls. We can measure the overhead of the kernel calling a userspace function if we really want: "Then we can use a simple capsule to redirect a syscall as a callback to measure the kernel to userspace system call."
 
-\subsubsection{System call overhead} \label{sec:syscalls}
-(Overhead of system call)
+\subsubsection{Threading overhead}
+%(Does Tock support application level threading? Does it spin up a kernel thread?)
 
-Context switching overhead, procedure call overhead through library if not done directly. Could depend on optimization level of program. Need to disassemble program to verify. (FIXME what else?)
+Tock does not support multiple threads per process at the moment. What the operating system supports in lieu of threads is the ability to subscribe callbacks to be called in the case of events. (FIXME is there any good way to check the overhead? We can measure how long it takes for a subscribe syscall, but that doesn't actually run the callback-- the callback is run asynchronously. Maybe if there is a way to have the callback run instantly?).
 
-% \subsubsection{Threading overhead} As far as I can tell, Tock does not support threading for userspace applications
-%(Does Tock support  application level threading? Does it spin up a kernel thread?)
+%Task creation time: Report the time to create and run both a process and a kernel thread (kernel threads run at user-level, but they are created and managed by the OS; e.g., pthread_create on modern Linux will create a kernel-managed thread). How do they compare?
+\subsubsection{Task creation time}
 
+Tock only creates new processes when booting, and there is no way, currently, to create new processes afterwards. Applications are loaded sequentially from e-flash, until all applications are loaded, an invalid application header is found, or the hardware runs out of RAM. After all applications are loaded, the scheduler begins and starts scheduling processes for execution.
+
+(FIXME is there any way to salvage this section? I'm not there is a good way to measure from userland how long it takes to do this. We could modify the kernel for this specific test, but I'd rather not do that, just to keep everything consistent with every other step. Something like this could work, maybe?
+
+We used the debug memory of the FPGA with a modified kernel to measure the process creation time. This was profiled in the same way as the procedure calls.
+)
+
+%Context switch time: Report the time to context switch from one process to another, and from one kernel thread to another. How do they compare? In the past students have found using blocking pipes to be useful for forcing context switches. (For insight into why a context switch can be much more expensive than a procedure call, consider the evolution of the Linux kernel trap on x86.) 
 \subsubsection{Context Switching}
 
-A context switch is the most basic operation in any program. This includes the time it takes to make a procedure call, system call, start a new task, or switch to a running tasks. We first measured the overhead of a time measuring operation. Using the $RDCYCLE$ and $RDCYCLEH$ instructions we can measure how many CPU cycles an operation took. To measure the measurement overhead we repeatedly start and stop and start the measurement and measure the increase in time of each additional start and stop.
-
-The simplest type of context switch if a procedure call within the same process. Since this occurs very often it is paramount that the overhead be as minimal as possible. We profile the procedure call overhead by measuring the time between a function invocation and the first instruction execution in the function. After this we subtract our measurement overhead as determined in the previous experiment.
-
-Another important aspect of context switching is making a syscall. In a broader sense this is crossing the kernel-userspace boundary. Tock has two ways to cross the kernel-userspace boundary. The first is making a syscall to the kernel, the second is receiving a callback from kernel space. We intend to measure both of these directions. In this experiment we first measured the latency of making a standard syscall by using the memop syscall is it is the most lightweight one. Then we can use a simple capsule to redirect a syscall as a callback to measure the kernel to userspace system call.
-
-Creating tasks is often an expensive operation. As a result tock does not support dynamic process creation. Instead all processes are created at boot time. We used the debug memory of the FPGA with a modified kernel to measure the process creation time. This was profiled in the same way as the procedure calls.
-
-The last major component of Context switching is switching the currently executing process. In tock's case we accomplish this with the yield syscall. We can trigger a context switch and write the timing counters before and after in each of the processes. This gives us the context switch time.
+Tock user-level applications are preempted by the scheduler. Userspace applications can communicate with each other with some IPC facilities provided by the kernel, and this can be used to test context switching by explicitly handing control from one application to another through the Yield system call (FIXME or by having one application Yield from the beginning, and have the other wake it up via IPC, and measure how long it takes for it to wake up). Triggering a context switch by Yield (and or? IPC) and writing the timing counters before and after in each of the processes provides the context switch time. 
 
 
-% Measurement overhead: Report the overhead of reading time, and report the overhead of using a loop to measure many iterations of an operation.
 % Time can be reported with the $RDCYCLE$, $RDTIME$, and $RDINSTRET$ pseudoinstructions. $RDINSTRET$ measures the number of instructions executed which might be better than the number of cycles or time. %A little more about what benchmark
 
 % Procedure call overhead: Report as a function of number of integer arguments from 0-7. What is the increment overhead of an argument?
@@ -158,11 +183,13 @@ This can be measured with an array copy over a large array, the lack of data cac
 We don't have virtual memory to speak of and all allocation is static. We can however change the brk and sbrk values which allows us to test page faults. We might want to look at the overhead of the $allow$ syscall instead as this is how we can give a capsule access to process memory.
 
 \subsection{Network}
+
+While Tock does have support for UDP on IPv6, the Earl Grey microcontroller has no networking hardware.
 % We don't have a network connection. This might be a good time to profile the inter process communication framework instead. Here we can measure the time it takes to "transmit" and "receive" data from another process.
 
 % \^This is a lie
 
-We might want to use IPC or we can attempt to profile USB communication.
+FIXME We might want to use IPC or we can attempt to profile USB communication.
 
 \subsection{File System}
 % Size of file cache: Note that the file cache size is determined by the OS and will be sensitive to other load on the machine; for an application accessing lots of file system data, an OS will use a notable fraction of main memory (GBs) for the file system cache. Report results as a graph whose x-axis is the size of the file being accessed and the y-axis is the average read I/O time. Do not use a system call or utility program to determine this metric except to sanity check.
@@ -179,6 +206,5 @@ We could set up an IPC channel that writes to flash in another process, however 
 We can do this for userspace applications however capsules use a cooperative multiprocessing environment and might give interesting results. We would expect throughput to be slightly less than 1/N for each process. 
 
 \printbibliography
-
 
 \end{document}
