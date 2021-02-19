@@ -6,6 +6,8 @@
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{ulem}
+\usepackage{float}
+\usepackage{graphicx}
 
 \title{First draft: Benchmarking the Tock operating system for embedded platforms \\[0.2em]\smaller{} CSE 221 Project}
 \author{Maximilian Apodaca, Grant Jiang, Gabriel Marcano}
@@ -52,21 +54,72 @@ This project lasts for the duration of the quarter (10 weeks). Each team member 
 \section{Machine Description}
 
 \subsection{Hardware}
+Table \ref{table:1} summarizes the basic specifications of the OpenTitan Earl Grey microcontroller.
+
+\begin{table}[H]
+\centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{OpenTitan Earl Grey Microcontroller} \\
+        \hline
+        \hline
+        CPU & Ibtex RISC-V RV32IMC \\
+        \hline
+        External Clock & 100 MHz \\
+        \hline
+        Instruction cache & 4 kB \\
+        \hline
+        Data cache & None \\
+        \hline
+        Pipeline & 2-stage, variable execution length \\
+        \hline
+        Branch prediction & None (no penalty for not taken) \\
+        \hline
+        Memory protection & RISC-V Physical Memory Protection\cite{riscv-priv} \\
+        \hline
+        Memory regions supported & 16 \\
+        \hline
+        Memory & SRAM, flash, ROM \\
+        \hline
+        ROM size & 16 kB \\
+        \hline
+        SRAM size & 64 kB \\
+        \hline
+        Flash size & 512 kB \\
+        \hline
+        Interfaces & GPIO, SPI, UART, and JTAG \\
+        \hline
+        Networking & None \\
+        \hline
+    \end{tabular}
+\caption{OpenTitan Earl Grey Microcontroller specifications}
+\label{table:1}
+\end{table}
+
 The FPGA bitstream loaded onto the Nexys Video development board implements an OpenTitan Earl Grey microcontroller (\url{https://docs.opentitan.org/hw/top_earlgrey/doc/}). The CPU of the microcontroller is an Ibex RISC-V 32-bit CPU (implementing the RISC-V RV32IMC specification), configured to run at 100 MHz, with 4 kB of instruction cache and no data cache. It has a two stage pipeline consisting of a an Instruction Fetch (IF) stage followed by an Instruction Decode and Execute (ID/EX) stage (some instructions may spend more than one cycle in the execute stage). As configured for the Earl Grey microcontroller, there is no branch prediction (there is no branch penalty if the branch is not taken). The CPU does not support virtual memory, instead implementing Physical Memory Protection (PMP) per the RISC-V Privileged Specification, version 1.11 \cite{riscv-priv}. The CPU PMP is configured to support up to 16 memory protection regions. (for more information on stalls, see \url{https://github.com/lowRISC/ibex/blob/master/doc/03\_reference/pipeline\_details.rst}). There is no floating point unit attached to this CPU.
 
 All of the memory used by the system is kept within the microcontroller; it does not support interfacing with external memory. The microcontroller has 16 kB of ROM used to store the primary boot loader, 512kB of embedded flash (e-flash) to store the actual program data (such as the operating system and application programs and data), and 64 kB of SRAM as scratch space. It takes two cycles to access data from SRAM, and currently also two cycle to read from ROM and e-flash (FIXME confirm this, I know flash is emulated, and that for a long time they had cache disabled, probably because of single cycle memory access timing). ROM, e-flash, and SRAM are mapped to the processors address space and can be accessed directly by the CPU.
 
 The Earl Grey microcontroller supports GPIO, SPI, UART, and JTAG interfaces to interface with it. Internally, it uses a customized data bus to connect all internal peripherals to the CPU (TLUL bus interconnect). (FIXME what is the bandwidth of the different components?)
 
-Testing on the Tock operating system git commit X, and on OpenTitan git commit 99cb19827 (built using Xilinx Vivado 2020.1), as this is the latest version currently supported by the Tock operating system.
-
 \subsection{Operating system}
 
-The operating system Tock is an "embedded operating system designed for running multiple concurrent, mutually distrustful applications on Cortex-M and RISC-V based embedded platforms" \cite{tockgithub}. The majority of the operating system is written in Rust, with most parts of the kernel, including all drivers (called capsules), written in safe Rust, and only low level portions hardware specific components written in unsafe Rust and small amounts of assembly language. The kernel uses the Ibex PMP provided by the Earl Grey microcontroller to segregate running userland applications from each other.
+The operating system Tock is an "embedded operating system designed for running multiple concurrent, mutually distrustful applications on Cortex-M and RISC-V based embedded platforms" \cite{tockgithub}. The majority of the operating system is written in Rust, with most parts of the kernel, including all drivers (called capsules), written in safe Rust, and only low level portions hardware specific components written in unsafe Rust and small amounts of assembly language. The kernel uses the Ibex PMP provided by the Earl Grey microcontroller to segregate running userland applications from each other. Figure \ref{figure:1} show the general architecture of Tock.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=\textwidth]{tock-stack.png}
+    \caption{Tock architecture\cite{tockgithub-arch}}
+    \label{figure:1}
+\end{figure}
 
 The operating system loads applications from e-flash on boot, and there is no way currently to load new applications dynamically the initial loading of applications. Applications run preemptively, while kernel level instructions (capsules/drivers and underlying kernel code) execute cooperatively.
 
-This version supports the original version of the system call interface to the Tock operating system. (FIXME need to determine what commit of Tock to use).
+\subsection{Versions and builds}
+
+The version of Tock used for this project supports the original version of the system call interface to the Tock operating system. (FIXME need to determine what commit of Tock to use).
+
+Testing on the Tock operating system git commit X, and on OpenTitan git commit 99cb19827 (built using Xilinx Vivado 2020.1), as this is the latest version currently supported by the Tock operating system.
 
 The operating system was built using the following compiler and linker:
 \begin{itemize}
@@ -76,7 +129,7 @@ The operating system was built using the following compiler and linker:
 % Measurement overhead: Report the overhead of reading time, and report the overhead of using a loop to measure many iterations of an operation.
 \section{Operations and Methodology}
 
-The operations benchmarked for this project can be grouped the following categories:
+The operations benchmarked for this project are grouped in the following categories:
 
 \begin{itemize}
     \item CPU, scheduling, and OS services
@@ -104,7 +157,7 @@ RISC-V offers performance counters, including a cycle counter. The cycle counter
 The bottom 32 bits of the cycle counter should be sufficient precision to measure all benchmarks in this paper, as no benchmark window should be more than 4 billion cycles. The following is an example of taking a measurement, in assembly in Rust:
 
 %maybe use minted package
-\begin{lstlisting}[language=rust]
+\begin{lstlisting}[]
         let timestamp: u32;
         unsafe {
             asm!("RDCYCLE {}", out(reg) timestamp);
@@ -124,12 +177,12 @@ And the same code in C/C++:
 
 \begin{lstlisting}[language=c]
         uint32_t timestamp;
-        asm ("mov %1, %0" : "=r" (timestamp));
+        asm ("rdcycle %0" : "=r" (timestamp));
     
         // Code to benchmark
     
         uint32_t timestamp_end;
-        asm ("mov %1, %0" : "=r" (timestamp_end));
+        asm ("rdcycle %0" : "=r" (timestamp_end));
     
         uint32_t cycles = timestamp_end - timestamp;
 \end{lstlisting}
@@ -138,23 +191,23 @@ Timing measurement overhead is measured by taking a timestamp before and after a
 
 \begin{lstlisting}[language=c]
         uint32_t timestamp;
-        asm ("mov %1, %0" : "=r" (timestamp));
+        asm ("rdcycle %0" : "=r" (timestamp));
     
         uint32_t timestamp_tmp;
-        asm ("mov %1, %0" : "=r" (timestamp_tmp));
-        asm ("mov %1, %0" : "=r" (timestamp_tmp));
+        asm ("rdcycle %0" : "=r" (timestamp_tmp));
+        asm ("rdcycle %0" : "=r" (timestamp_tmp));
         
-        asm ("mov %1, %0" : "=r" (timestamp_tmp));
-        asm ("mov %1, %0" : "=r" (timestamp_tmp));
+        asm ("rdcycle %0" : "=r" (timestamp_tmp));
+        asm ("rdcycle %0" : "=r" (timestamp_tmp));
         
-        asm ("mov %1, %0" : "=r" (timestamp_tmp));
-        asm ("mov %1, %0" : "=r" (timestamp_tmp));
+        asm ("rdcycle %0" : "=r" (timestamp_tmp));
+        asm ("rdcycle %0" : "=r" (timestamp_tmp));
         
-        asm ("mov %1, %0" : "=r" (timestamp_tmp));
-        asm ("mov %1, %0" : "=r" (timestamp_tmp));
+        asm ("rdcycle %0" : "=r" (timestamp_tmp));
+        asm ("rdcycle %0" : "=r" (timestamp_tmp));
     
         uint32_t timestamp_end;
-        asm ("mov %1, %0" : "=r" (timestamp_end));
+        asm ("rdcycle %0" : "=r" (timestamp_end));
     
         uint32_t cycles = (timestamp_end - timestamp)/4;
 \end{lstlisting}
