@@ -50,8 +50,8 @@ async fn main() -> TockResult<()> {
 
     drivers.console.create_console();
     let perf = drivers.perf;
-    let mut cycle_deltas: [usize; NUMBER_OF_SAMPLES] = [0; NUMBER_OF_SAMPLES];
-    let mut instruction_deltas: [usize; NUMBER_OF_SAMPLES] = [0; NUMBER_OF_SAMPLES];
+    let mut cycle_deltas = [0; NUMBER_OF_SAMPLES];
+    let mut instruction_deltas = [0; NUMBER_OF_SAMPLES];
 
     // do warmup
     for i in 0..NUMBER_OF_SAMPLES {
@@ -64,12 +64,25 @@ async fn main() -> TockResult<()> {
         instruction_deltas[i] = do_instruction(&perf);
     }
 
+    println!("### RESULTS ###");
+    println!("benchmark:, timing overhead cycles");
+    println!("description:, Measures cycles taken for samples_per_run+1 calls of the perf.cycles syscall");
+    println!("samples_per_run, {}", SAMPLE_COUNT);
+    println!("run, cycles");
     for i in 0..NUMBER_OF_SAMPLES {
-        println!("Sample #{}: {} cycles, {} instructions.", i, cycle_deltas[i], instruction_deltas[i]);
+        println!("{}, {}", i, cycle_deltas[i]);
     }
-    
 
-    println!("Hello Demo Took {} cycles", cycle_deltas[0]);
+    println!();
+
+    println!("### RESULTS ###");
+    println!("benchmark:, timing overhead instructions");
+    println!("description:, Measures instructions taken for samples_per_run+1 calls of the perf.instructions syscall");
+    println!("samples_per_run, {}", SAMPLE_COUNT);
+    println!("run, instructions");
+    for i in 0..NUMBER_OF_SAMPLES {
+        println!("{}, {}", i, instruction_deltas[i]);
+    }
 
     Ok(())
 }
