@@ -4,6 +4,7 @@
 
 #include <ipc.h>
 #include <perf.h>
+#include <tock.h>
 
 #define SAMPLE_COUNT 100
 
@@ -24,6 +25,7 @@ static void ipc_callback(__attribute__ ((unused)) int pid,
   counter ++;
   if(counter < SAMPLE_COUNT){
     ipc_notify_svc(ipc_svc_num);
+    yield();
   } else {
     printf("### RESULTS ###\n");
     printf("benchmark:, measures ipc call overhead\n");
