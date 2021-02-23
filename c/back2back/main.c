@@ -1,11 +1,9 @@
-#include <iostream>
 #include <perf.h>
+#include <stdio.h>
 
-#define DEBUG 1
+#define DEBUG 0
 
-
-int main(){
-
+int main(void){
   //how many bytes to jump by
   int dists[] = {16, 32, 64};
   char ar[64*500];
@@ -19,21 +17,21 @@ int main(){
     int jumpDist = dists[i]/sizeof(int*);
 
     //set up pointers
-    for(int i = 0; i < 499; i++){
+    for(int j = 0; j < 499; j++){
       *startp = (int*)(startp + jumpDist);//jumpDist*sizeof(int*) forward
 #if DEBUG
       printf("dist: %ld\n", (long)(*startp) - (long)(startp));
 #endif
       startp += jumpDist;
     }
-    *startp = nullptr;
+    *startp = NULL;
 #if DEBUG
     printf("end ptr: %p\n", startp);
+    int count = 0;
 #endif
 
     //do test
     int start, end;
-    int count = 0;
     startp = (int**)ar;
     start = perf_cycles();
     while(startp){
