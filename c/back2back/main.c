@@ -17,6 +17,7 @@ int main(void){
 #endif
 
   //call perfcycles syscall
+  int results[3];
   for(int i = 0; i < 3; i++){
     int jumpDist = dists[i]/sizeof(struct node);
 
@@ -46,9 +47,18 @@ int main(void){
 #endif
     }
     end = perf_cycles();
-    printf("Cycles: %d\n", end-start);
+    results[i] = end-start;
 #if DEBUG
     printf("%d:\t%p\n", count, startp);
 #endif
+  }
+
+  printf("### RESULTS ###\n"
+      "benchmark: back-to-back memory access as described by lmbench and\n"
+      "           confirms there is no data cache\n"
+      "description: back-to-back attempts to blow out the data cache\n"
+      "             by accessing at the start of each possible block\n");
+  for(int i = 0; i < 3; i++){
+    printf("Cycles: %d\n", results[i]);
   }
 }
