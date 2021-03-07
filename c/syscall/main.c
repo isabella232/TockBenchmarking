@@ -17,6 +17,7 @@ void command_test(void)
   printf("run, cycles\n");
   for(size_t i = 0; i < 1000; ++i) {
     unsigned cycles1 = perf_cycles();
+    perf_cycles();
     unsigned cycles2 = perf_cycles();
   	printf("%u, %u\n", i, cycles2 - cycles1);
   }
@@ -24,6 +25,7 @@ void command_test(void)
   printf("run, instructions\n");
   for(size_t i = 0; i < 1000; ++i) {
     unsigned instr1 = perf_instructions_retired();
+    perf_cycles();
     unsigned instr2 = perf_instructions_retired();
     printf("%u, %u\n", i, instr2 - instr1);
   }
