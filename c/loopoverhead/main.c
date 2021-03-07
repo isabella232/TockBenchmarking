@@ -46,8 +46,8 @@ int main(void){
   printf("Test 2: loop with always not taken inside\n");
   //time this loop: 1 branch not taken for each loop compared to above
   //time=(branch taken + stall) + and + maybe stall + branch not taken->no stall
-  //=0,
-  //loop: and, bne1 taken, +=1, bne1000 taken so twice as long?
+  //=0, mv
+  //loop: lw, addi, bnez not taken, bnez taken
   volatile int val = 0;//if val is 1 then
   for(int i = 0; i < 32; i++){
     start = perf_cycles();
@@ -67,9 +67,9 @@ int main(void){
 
     //simple alternating loop
     //time:
-    //=0,
-    //loop1: and, bnez taken...
-    //loop2:
+    //lw, mv, li, addi, sw, loop2, loop1
+    //loop1: andi, bnez taken,     lw, addi, addi, sw, bne taken
+    //loop2: andi, bnez not taken, lw, addi, addi, sw, bne taken
     volatile int temp;
     start = perf_cycles();
     for(int j = 0; j < 1000; j++){
@@ -81,6 +81,8 @@ int main(void){
 
   printf("Test 4: Always taken\n");
   for(int i = 0; i < 32; i++){
+    //li, mv, j
+    //lw, beqz taken, addi, beqz not taken
     volatile int temp = 0;
     start = perf_cycles();
     for(int j = 0; j < 1000; j++){
