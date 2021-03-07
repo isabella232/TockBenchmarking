@@ -174,5 +174,3 @@ int __attribute__((noinline, optimize(0))) test_10(int a, int b, int c, int d, i
 	(void)i;
 	return j;
 }
-
-
