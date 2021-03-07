@@ -11,7 +11,7 @@
 
 int ipc_svc_num = 0;
 
-uint32_t alignas(4) buf[(1<<3)/sizeof(uint32_t)];
+uint32_t alignas(4) buf[((1<<13) + (1<<11))/sizeof(uint32_t)];
 
 uint32_t samples[SAMPLE_COUNT];
 
@@ -26,7 +26,6 @@ static void ipc_callback(__attribute__ ((unused)) int pid,
   counter ++;
   if(counter < SAMPLE_COUNT){
     ipc_notify_svc(ipc_svc_num);
-    yield();
   } else {
     printf("### RESULTS ###\n");
     printf("benchmark:, measures ipc call overhead\n");
@@ -52,7 +51,7 @@ int main(void) {
 
   ipc_register_client_cb(ipc_svc_num, ipc_callback, buf);
 
-  ipc_share(ipc_svc_num, buf, 1<<14);
+  ipc_share(ipc_svc_num, buf, sizeof(buf));
 
   ipc_notify_svc(ipc_svc_num);
   return 0;

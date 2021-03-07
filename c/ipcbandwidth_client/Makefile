@@ -6,8 +6,7 @@ TOCK_USERLAND_BASE_DIR = ../../../../
 # Which files to compile.
 C_SRCS := $(wildcard *.c)
 
-STACK_SIZE := 8192
-APP_HEAP_SIZE := 8192
+APP_HEAP_SIZE := 6144
 
 # Include userland master makefile. Contains rules and flags for actually
 # building the application.

@@ -2,7 +2,7 @@
 #include <tock.h>
 #include <perf.h>
 
-uint32_t buffer[(1<<13)/sizeof(uint32_t)];
+uint32_t buffer[((1<<13) + (1<<11))/sizeof(uint32_t)];
 
 static void ipc_callback(int pid, int len, int buf, __attribute__ ((unused)) void* ud) {
 
