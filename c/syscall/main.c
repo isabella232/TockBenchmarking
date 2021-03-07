@@ -19,7 +19,7 @@ void command_test(void)
     unsigned cycles1 = perf_cycles();
     perf_cycles();
     unsigned cycles2 = perf_cycles();
-  	printf("%u, %u\n", i, cycles2 - cycles1);
+    printf("%u, %u\n", i, cycles2 - cycles1);
   }
   printf("benchmark: " "system_call_instructions\n");
   printf("run, instructions\n");
