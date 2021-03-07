@@ -32,8 +32,8 @@ const char flash[BUF_SIZE] = "this is a test buffer";
 
 int main(void)
 {
-	volatile char sram1[BUF_SIZE];
-	volatile char sram2[BUF_SIZE];
+	volatile unsigned sram1[BUF_SIZE/4];
+	volatile unsigned sram2[BUF_SIZE/4];
 
 	// memcpy
 	printf("sram locations: %p %p\n", sram1, sram2);
@@ -41,22 +41,22 @@ int main(void)
 	printf("### RESULTS ###\n");
 	TEST(memcpy_bandwidth_cycles, memcpy((char*)sram1, (char*)sram2, sizeof(sram1)),,)
 	TEST(manual_copy_bandwidth_cycles,
-		for (size_t j = 0; j < sizeof(sram1); ++j) sram1[j] = sram2[j];,
+		for (size_t j = 0; j < sizeof(sram1)/4; ++j) sram1[j] = sram2[j];,
 		,
 	)
 
 	unsigned sum = 0;
 	TEST(read_bandwidth_instructions,
-		for (size_t j = 0; j < sizeof(sram1); ++j) val = sram1[j];,
+		for (size_t j = 0; j < sizeof(sram1)/4; ++j) val = sram1[j];,
 		volatile unsigned val;,
-		for (size_t j = 0; j < sizeof(sram1); ++j) sum += sram1[j] + val;
+		for (size_t j = 0; j < sizeof(sram1)/4; ++j) sum += sram1[j] + val;
 	)
 	printf("Ignore this value: %u\n", sum);
 
 	TEST(write_bandwidth_instructions,
-		for (size_t j = 0; j < sizeof(sram1); ++j) sram1[j] = val;,
+		for (size_t j = 0; j < sizeof(sram1)/4; ++j) sram1[j] = val;,
 		volatile unsigned val = 0xFFFF0000 + i,
-		for (size_t j = 0; j < sizeof(sram1); ++j) sum += sram1[j];
+		for (size_t j = 0; j < sizeof(sram1)/4; ++j) sum += sram1[j];
 	)
 	printf("Ignore this value: %u\n", sum);
 
