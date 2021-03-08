@@ -7,7 +7,7 @@ static void ipc_callback(
     __attribute__ ((unused)) int len,
     int buf,
     __attribute__ ((unused)) void* ud) {
-
+(void)buf;
   /*
   uint32_t cycles = perf_cycles();
   uint32_t* cycle_pos = (uint32_t*)buf;

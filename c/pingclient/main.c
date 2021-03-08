@@ -14,12 +14,10 @@ int ipc_svc_num = 0;
 uint32_t buf[64/sizeof(uint32_t)] __attribute__((aligned(64)));
 
 uint32_t samples[SAMPLE_COUNT];
-
 static void ipc_callback(__attribute__ ((unused)) int pid,
                           __attribute__ ((unused)) int len,
                           __attribute__ ((unused)) int buf_ptr,
                           __attribute__ ((unused)) void* ud) {
-  asm("");
   //need to check if optimized out. Also what's the unused for?
 }
 
