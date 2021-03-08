@@ -6,7 +6,7 @@
 
 void _start();
 void _etext();
-#define NUMBER_OF_SAMPLES 10
+#define NUMBER_OF_SAMPLES 100
 #define RUN_LENGTH (0x2000 - 0x100)
 #define START_ADDRESS ((uint32_t *)_start)
 #define END_ADDRESS ((uint32_t *)(_etext))
@@ -39,8 +39,13 @@ int main(void)
 
 void flash_bandwith_test(void)
 {
-  unsigned times[NUMBER_OF_SAMPLES];
   unsigned big_sum = 0;
+
+  printf("### RESULTS ###\n");
+  printf("benchmark: flash_bandwidth\n");
+  printf("description: measures flash bandwidth reading\n");
+  printf("Run length: %d\n", RUN_LENGTH);
+  printf("run, cycles, cycles / byte\n");
 
   for (size_t i = 0; i < NUMBER_OF_SAMPLES; ++i)
   {
@@ -53,24 +58,20 @@ void flash_bandwith_test(void)
       READ_AND_INCREMENT_X16(start_ptr);
     }
     unsigned cycles2 = perf_cycles();
-    times[i] = cycles2 - cycles1;
+    unsigned time = cycles2 - cycles1;
     big_sum += sum;
+    int cycles_per_byte = time / (RUN_LENGTH);
+    printf("%u, %u, %d\n", i, time, cycles_per_byte);
   }
   printf("Got sum %d\n\n", big_sum);
 
-  printf("### RESULTS ###\n");
-  printf("benchmark: flash_bandwidth\n");
-  printf("description: measures flash bandwidth reading\n");
-  printf("Run length: %d\n", RUN_LENGTH);
-  printf("run, cycles, cycles / byte\n");
-  for (size_t i = 0; i < NUMBER_OF_SAMPLES; i++)
-  {
-    int cycles_per_byte = (times[i]) / (RUN_LENGTH);
-    printf("%u, %u, %d\n", i, times[i], cycles_per_byte);
-  }
-
-  uint32_t counts[NUMBER_OF_SAMPLES];
   big_sum = 0;
+
+  printf("### RESULTS ###\n");
+  printf("benchmark: flash_random_bandwidth\n");
+  printf("description: measures flash bandwidth reading width random offsets\n");
+  printf("Max Offset: %d\n", RANDOM_OFFSET_WIDTH);
+  printf("run, cycles, bytes_read, cycles / byte\n");
 
   for (size_t i = 0; i < NUMBER_OF_SAMPLES; ++i)
   {
@@ -86,21 +87,12 @@ void flash_bandwith_test(void)
       count++;
     }
     unsigned cycles2 = perf_cycles();
-    times[i] = cycles2 - cycles1;
+    unsigned time = cycles2 - cycles1;
     big_sum += sum;
-    counts[i] = count;
+
+    int cycles_per_byte = time / (count * 4);
+    printf("%u, %u, %lu, %d\n", i, time, count * 4, cycles_per_byte);
   }
 
   printf("Got sum %d\n\n", big_sum);
-
-  printf("### RESULTS ###\n");
-  printf("benchmark: flash_random_bandwidth\n");
-  printf("description: measures flash bandwidth reading width random offsets\n");
-  printf("Max Offset: %d\n", RANDOM_OFFSET_WIDTH);
-  printf("run, cycles, bytes_read, cycles / byte\n");
-  for (size_t i = 0; i < NUMBER_OF_SAMPLES; i++)
-  {
-    int cycles_per_byte = (times[i]) / (counts[i] * 4);
-    printf("%u, %u, %lu, %d\n", i, times[i], counts[i] * 4, cycles_per_byte);
-  }
 }
