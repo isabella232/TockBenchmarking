@@ -1,6 +1,10 @@
 #include <perf.h>
 #include <stdio.h>
-
+/*
+The test follows the same design as described by the lmbench which essentially traverses a linked list.
+For each round of tests, we construct a 500 node linked list with a set number of bytes between each dereference.
+Then we record the number of cycles it takes to traverse the whole linked list.
+*/
 #define DEBUG 0
 
 struct node
@@ -18,7 +22,7 @@ int main(void){
 
   //call perfcycles syscall
   int results[3];
-  for(int i = 0; i < 3; i++){
+  for(int i = 0; i < 3; i++){//for each test in dists[]
     int jumpDist = dists[i]/sizeof(struct node);
 
     //set up pointers
