@@ -32,6 +32,7 @@ int main(void)
 #ifdef __arm__
 void icache_test(int backjump)
 {
+	(void)backjump;
 }
 #else
 void icache_test(int backjump)
