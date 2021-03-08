@@ -32,8 +32,8 @@ int main(void) {
   ipc_register_client_cb(ipc_svc_num, ipc_callback, buf);
 
   printf("### RESULTS ###\n");
-  printf("benchmark:, measures ipc call overhead\n");
-  printf("description:, Measures cycles taken for one process to notify the other\n");
+  printf("benchmark: measures IPC call and memory copying over IPC overhead\n");
+  printf("description: measures cycles taken for one process to copy data received from another\n");
   printf("run, cycles\n");
   ipc_share(ipc_svc_num, buf, sizeof(buf));
   for (size_t counter = 0; counter < SAMPLE_COUNT; ++counter)
