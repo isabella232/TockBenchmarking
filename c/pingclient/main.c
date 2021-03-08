@@ -13,7 +13,6 @@ int ipc_svc_num = 0;
 //or use alignas(64) unint32_t buf[..];
 uint32_t buf[64/sizeof(uint32_t)] __attribute__((aligned(64)));
 
-uint32_t samples[SAMPLE_COUNT];
 static void ipc_callback(__attribute__ ((unused)) int pid,
                           __attribute__ ((unused)) int len,
                           __attribute__ ((unused)) int buf_ptr,
@@ -38,23 +37,21 @@ int main(void) {
   //share buffer with other process. Where in server does it see this?
   ipc_share(ipc_svc_num, buf, 64);
 
-  for(int i = 0; i < SAMPLE_COUNT; i++){
-    int start, end;
-    start = perf_cycles();
-    ipc_notify_svc(ipc_svc_num);
-    yield();//won't schedule this process unless it's notified
-    end = perf_cycles();
-    samples[i] = end-start;
-  }
-
   printf("### RESULTS ###1\n"
          "benchmark: measures ping time\n"
          "description: Measures cycles taken for one process to notify\n"
          "             the other and for the other to notify back.\n");
+
   printf("run, cycles\n");
   for(int i = 0; i < SAMPLE_COUNT; i++){
-    printf("%d, %ld\n", i, samples[i]);
+    unsigned start, end;
+    start = perf_cycles();
+    ipc_notify_svc(ipc_svc_num);
+    yield();//won't schedule this process unless it's notified
+    end = perf_cycles();
+    printf("%d, %u\n", i, end-start);
   }
+
   printf("\n");
   return 0;
 }
