@@ -9,7 +9,7 @@ Then we record the number of cycles it takes to traverse the whole linked list.
 
 struct node
 {
-	struct node *next;
+  struct node *next;
 };
 
 int main(void){
@@ -21,48 +21,47 @@ int main(void){
 #endif
 
   //call perfcycles syscall
-  int results[3];
   for(int i = 0; i < 3; i++){//for each test in dists[]
+    printf("### RESULTS ###\n"
+      "benchmark: back-to-back memory access as described by lmbench and\n"
+      "           confirms there is no data cache, distance %d\n"
+      "description: back-to-back attempts to blow out the data cache\n"
+      "             by accessing at the start of each possible block\n", dists[i]);
     int jumpDist = dists[i]/sizeof(struct node);
 
-    //set up pointers
-    struct node* startp = &ar[0];
-    for(int j = 0; j < 499; j++){
-      startp->next = startp + jumpDist;
+    for (size_t k = 0; k < 1000; ++k)
+    {
+      //set up pointers
+      struct node* startp = &ar[0];
+      for(int j = 0; j < 499; j++){
+        startp->next = startp + jumpDist;
 #if DEBUG
-      printf("dist: %ld\n", (long)(startp->next) - (long)(startp));
+        printf("dist: %ld\n", (long)(startp->next) - (long)(startp));
 #endif
-      startp += jumpDist;
-    }
-    startp = NULL;
+        startp = startp->next;
+      }
+      startp->next = NULL;
 #if DEBUG
-    printf("end ptr: %p\n", startp);
-    int count = 0;
+      printf("end ptr: %p\n", startp->next);
+      int count = 0;
 #endif
 
-    //do test
-    unsigned start, end;
-    startp = &ar[0];
-    start = perf_cycles();
-    while(startp){
-      startp = startp->next;
+      //do test
+      unsigned start, end;
+      startp = &ar[0];
+      start = perf_cycles();
+      while(startp){
+        startp = startp->next;
 #if DEBUG
-      count++;
+        count++;
+#endif
+      }
+
+      end = perf_cycles();
+      printf("%d, %d\n", k, end-start);
+#if DEBUG
+      printf("%d:\t%p\n", count, startp);
 #endif
     }
-    end = perf_cycles();
-    results[i] = end-start;
-#if DEBUG
-    printf("%d:\t%p\n", count, startp);
-#endif
-  }
-
-  printf("### RESULTS ###\n"
-      "benchmark: back-to-back memory access as described by lmbench and\n"
-      "           confirms there is no data cache\n"
-      "description: back-to-back attempts to blow out the data cache\n"
-      "             by accessing at the start of each possible block\n");
-  for(int i = 0; i < 3; i++){
-    printf("Cycles: %d\n", results[i]);
   }
 }

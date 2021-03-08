@@ -1,0 +1,4107 @@
+I00000 boot_rom.c:52] Version:    opentitan-snapshot-20191101-1-3670-g99cb1982
+
+Build Date: 2020-12-19, 17:43:25
+
+
+
+I00001 boot_rom.c:61] Boot ROM initialisation has completed, jump into flash!
+
+I00000 boot_rom.c:52] Version:    opentitan-snapshot-20191101-1-3670-g99cb1982
+
+Build Date: 2020-12-19, 17:43:25
+
+
+
+I00001 bootstrap.c:153] Bootstrap requested, initialising HW...
+
+I00002 bootstrap.c:177] HW initialisation completed, waiting for SPI input...
+
+I00003 bootstrap.c:101] Processing frame #0, expecting #0
+
+I00004 bootstrap.c:124] Flash erase successful
+
+I00005 bootstrap.c:101] Processing frame #0, expecting #1
+
+I00006 bootstrap.c:101] Processing frame #1, expecting #1
+
+I00007 bootstrap.c:101] Processing frame #0, expecting #2
+
+I00008 bootstrap.c:101] Processing frame #2, expecting #2
+
+I00009 bootstrap.c:101] Processing frame #0, expecting #3
+
+I00010 bootstrap.c:101] Processing frame #3, expecting #3
+
+I00011 bootstrap.c:101] Processing frame #0, expecting #4
+
+I00012 bootstrap.c:101] Processing frame #4, expecting #4
+
+I00013 bootstrap.c:101] Processing frame #0, expecting #5
+
+I00014 bootstrap.c:101] Processing frame #5, expecting #5
+
+I00015 bootstrap.c:101] Processing frame #0, expecting #6
+
+I00016 bootstrap.c:101] Processing frame #6, expecting #6
+
+I00017 bootstrap.c:101] Processing frame #0, expecting #7
+
+I00018 bootstrap.c:101] Processing frame #7, expecting #7
+
+I00019 bootstrap.c:101] Processing frame #0, expecting #8
+
+I00020 bootstrap.c:101] Processing frame #8, expecting #8
+
+I00021 bootstrap.c:101] Processing frame #0, expecting #9
+
+I00022 bootstrap.c:101] Processing frame #9, expecting #9
+
+I00023 bootstrap.c:101] Processing frame #0, expecting #10
+
+I00024 bootstrap.c:101] Processing frame #10, expecting #10
+
+I00025 bootstrap.c:101] Processing frame #0, expecting #11
+
+I00026 bootstrap.c:101] Processing frame #11, expecting #11
+
+I00027 bootstrap.c:101] Processing frame #0, expecting #12
+
+I00028 bootstrap.c:101] Processing frame #12, expecting #12
+
+I00029 bootstrap.c:101] Processing frame #0, expecting #13
+
+I00030 bootstrap.c:101] Processing frame #13, expecting #13
+
+I00031 bootstrap.c:101] Processing frame #0, expecting #14
+
+I00032 bootstrap.c:101] Processing frame #14, expecting #14
+
+I00033 bootstrap.c:101] Processing frame #0, expecting #15
+
+I00034 bootstrap.c:101] Processing frame #15, expecting #15
+
+I00035 bootstrap.c:101] Processing frame #0, expecting #16
+
+I00036 bootstrap.c:101] Processing frame #16, expecting #16
+
+I00037 bootstrap.c:101] Processing frame #0, expecting #17
+
+I00038 bootstrap.c:101] Processing frame #17, expecting #17
+
+I00039 bootstrap.c:101] Processing frame #0, expecting #18
+
+I00040 bootstrap.c:101] Processing frame #18, expecting #18
+
+I00041 bootstrap.c:101] Processing frame #0, expecting #19
+
+I00042 bootstrap.c:101] Processing frame #19, expecting #19
+
+I00043 bootstrap.c:101] Processing frame #0, expecting #20
+
+I00044 bootstrap.c:101] Processing frame #20, expecting #20
+
+I00045 bootstrap.c:101] Processing frame #0, expecting #21
+
+I00046 bootstrap.c:101] Processing frame #21, expecting #21
+
+I00047 bootstrap.c:101] Processing frame #0, expecting #22
+
+I00048 bootstrap.c:101] Processing frame #22, expecting #22
+
+I00049 bootstrap.c:101] Processing frame #0, expecting #23
+
+I00050 bootstrap.c:101] Processing frame #23, expecting #23
+
+I00051 bootstrap.c:101] Processing frame #0, expecting #24
+
+I00052 bootstrap.c:101] Processing frame #24, expecting #24
+
+I00053 bootstrap.c:101] Processing frame #0, expecting #25
+
+I00054 bootstrap.c:101] Processing frame #25, expecting #25
+
+I00055 bootstrap.c:101] Processing frame #0, expecting #26
+
+I00056 bootstrap.c:101] Processing frame #26, expecting #26
+
+I00057 bootstrap.c:101] Processing frame #0, expecting #27
+
+I00058 bootstrap.c:101] Processing frame #27, expecting #27
+
+I00059 bootstrap.c:101] Processing frame #0, expecting #28
+
+I00060 bootstrap.c:101] Processing frame #28, expecting #28
+
+I00061 bootstrap.c:101] Processing frame #0, expecting #29
+
+I00062 bootstrap.c:101] Processing frame #29, expecting #29
+
+I00063 bootstrap.c:101] Processing frame #0, expecting #30
+
+I00064 bootstrap.c:101] Processing frame #30, expecting #30
+
+I00065 bootstrap.c:101] Processing frame #0, expecting #31
+
+I00066 bootstrap.c:101] Processing frame #31, expecting #31
+
+I00067 bootstrap.c:101] Processing frame #0, expecting #32
+
+I00068 bootstrap.c:101] Processing frame #32, expecting #32
+
+I00069 bootstrap.c:101] Processing frame #0, expecting #33
+
+I00070 bootstrap.c:101] Processing frame #33, expecting #33
+
+I00071 bootstrap.c:101] Processing frame #0, expecting #34
+
+I00072 bootstrap.c:101] Processing frame #34, expecting #34
+
+I00073 bootstrap.c:101] Processing frame #0, expecting #35
+
+I00074 bootstrap.c:101] Processing frame #35, expecting #35
+
+I00075 bootstrap.c:101] Processing frame #0, expecting #36
+
+I00076 bootstrap.c:101] Processing frame #36, expecting #36
+
+I00077 bootstrap.c:101] Processing frame #0, expecting #37
+
+I00078 bootstrap.c:101] Processing frame #37, expecting #37
+
+I00079 bootstrap.c:101] Processing frame #0, expecting #38
+
+I00080 bootstrap.c:101] Processing frame #38, expecting #38
+
+I00081 bootstrap.c:101] Processing frame #0, expecting #39
+
+I00082 bootstrap.c:101] Processing frame #39, expecting #39
+
+I00083 bootstrap.c:101] Processing frame #0, expecting #40
+
+I00084 bootstrap.c:101] Processing frame #40, expecting #40
+
+I00085 bootstrap.c:101] Processing frame #0, expecting #41
+
+I00086 bootstrap.c:101] Processing frame #41, expecting #41
+
+I00087 bootstrap.c:101] Processing frame #0, expecting #42
+
+I00088 bootstrap.c:101] Processing frame #42, expecting #42
+
+I00089 bootstrap.c:101] Processing frame #0, expecting #43
+
+I00090 bootstrap.c:101] Processing frame #43, expecting #43
+
+I00091 bootstrap.c:101] Processing frame #0, expecting #44
+
+I00092 bootstrap.c:101] Processing frame #44, expecting #44
+
+I00093 bootstrap.c:101] Processing frame #0, expecting #45
+
+I00094 bootstrap.c:101] Processing frame #45, expecting #45
+
+I00095 bootstrap.c:101] Processing frame #0, expecting #46
+
+I00096 bootstrap.c:101] Processing frame #46, expecting #46
+
+I00097 bootstrap.c:101] Processing frame #0, expecting #47
+
+I00098 bootstrap.c:101] Processing frame #47, expecting #47
+
+I00099 bootstrap.c:101] Processing frame #0, expecting #48
+
+I00100 bootstrap.c:101] Processing frame #48, expecting #48
+
+I00101 bootstrap.c:101] Processing frame #0, expecting #49
+
+I00102 bootstrap.c:101] Processing frame #49, expecting #49
+
+I00103 bootstrap.c:101] Processing frame #0, expecting #50
+
+I00104 bootstrap.c:101] Processing frame #50, expecting #50
+
+I00105 bootstrap.c:101] Processing frame #0, expecting #51
+
+I00106 bootstrap.c:101] Processing frame #51, expecting #51
+
+I00107 bootstrap.c:101] Processing frame #0, expecting #52
+
+I00108 bootstrap.c:101] Processing frame #52, expecting #52
+
+I00109 bootstrap.c:101] Processing frame #0, expecting #53
+
+I00110 bootstrap.c:101] Processing frame #53, expecting #53
+
+I00111 bootstrap.c:101] Processing frame #0, expecting #54
+
+I00112 bootstrap.c:101] Processing frame #54, expecting #54
+
+I00113 bootstrap.c:101] Processing frame #0, expecting #55
+
+I00114 bootstrap.c:101] Processing frame #55, expecting #55
+
+I00115 bootstrap.c:101] Processing frame #0, expecting #56
+
+I00116 bootstrap.c:101] Processing frame #56, expecting #56
+
+I00117 bootstrap.c:101] Processing frame #0, expecting #57
+
+I00118 bootstrap.c:101] Processing frame #57, expecting #57
+
+I00119 bootstrap.c:101] Processing frame #0, expecting #58
+
+I00120 bootstrap.c:101] Processing frame #58, expecting #58
+
+I00121 bootstrap.c:101] Processing frame #0, expecting #59
+
+I00122 bootstrap.c:101] Processing frame #59, expecting #59
+
+I00123 bootstrap.c:101] Processing frame #0, expecting #60
+
+I00124 bootstrap.c:101] Processing frame #60, expecting #60
+
+I00125 bootstrap.c:101] Processing frame #0, expecting #61
+
+I00126 bootstrap.c:101] Processing frame #61, expecting #61
+
+I00127 bootstrap.c:101] Processing frame #0, expecting #62
+
+I00128 bootstrap.c:101] Processing frame #62, expecting #62
+
+I00129 bootstrap.c:101] Processing frame #0, expecting #63
+
+I00130 bootstrap.c:101] Processing frame #63, expecting #63
+
+I00131 bootstrap.c:101] Processing frame #0, expecting #64
+
+I00132 bootstrap.c:101] Processing frame #64, expecting #64
+
+I00133 bootstrap.c:101] Processing frame #0, expecting #65
+
+I00134 bootstrap.c:101] Processing frame #65, expecting #65
+
+I00135 bootstrap.c:101] Processing frame #0, expecting #66
+
+I00136 bootstrap.c:101] Processing frame #66, expecting #66
+
+I00137 bootstrap.c:101] Processing frame #0, expecting #67
+
+I00138 bootstrap.c:101] Processing frame #67, expecting #67
+
+I00139 bootstrap.c:101] Processing frame #0, expecting #68
+
+I00140 bootstrap.c:101] Processing frame #68, expecting #68
+
+I00141 bootstrap.c:101] Processing frame #0, expecting #69
+
+I00142 bootstrap.c:101] Processing frame #69, expecting #69
+
+I00143 bootstrap.c:101] Processing frame #0, expecting #70
+
+I00144 bootstrap.c:101] Processing frame #70, expecting #70
+
+I00145 bootstrap.c:101] Processing frame #0, expecting #71
+
+I00146 bootstrap.c:101] Processing frame #71, expecting #71
+
+I00147 bootstrap.c:101] Processing frame #0, expecting #72
+
+I00148 bootstrap.c:101] Processing frame #72, expecting #72
+
+I00149 bootstrap.c:101] Processing frame #0, expecting #73
+
+I00150 bootstrap.c:101] Processing frame #73, expecting #73
+
+I00151 bootstrap.c:101] Processing frame #0, expecting #74
+
+I00152 bootstrap.c:101] Processing frame #74, expecting #74
+
+I00153 bootstrap.c:101] Processing frame #0, expecting #75
+
+I00154 bootstrap.c:101] Processing frame #75, expecting #75
+
+I00155 bootstrap.c:101] Processing frame #0, expecting #76
+
+I00156 bootstrap.c:101] Processing frame #76, expecting #76
+
+I00157 bootstrap.c:101] Processing frame #0, expecting #77
+
+I00158 bootstrap.c:101] Processing frame #77, expecting #77
+
+I00159 bootstrap.c:101] Processing frame #0, expecting #78
+
+I00160 bootstrap.c:101] Processing frame #78, expecting #78
+
+I00161 bootstrap.c:101] Processing frame #0, expecting #79
+
+I00162 bootstrap.c:101] Processing frame #79, expecting #79
+
+I00163 bootstrap.c:101] Processing frame #0, expecting #80
+
+I00164 bootstrap.c:101] Processing frame #80, expecting #80
+
+I00165 bootstrap.c:101] Processing frame #0, expecting #81
+
+I00166 bootstrap.c:101] Processing frame #81, expecting #81
+
+I00167 bootstrap.c:101] Processing frame #0, expecting #82
+
+I00168 bootstrap.c:101] Processing frame #82, expecting #82
+
+I00169 bootstrap.c:101] Processing frame #0, expecting #83
+
+I00170 bootstrap.c:101] Processing frame #83, expecting #83
+
+I00171 bootstrap.c:101] Processing frame #0, expecting #84
+
+I00172 bootstrap.c:101] Processing frame #84, expecting #84
+
+I00173 bootstrap.c:101] Processing frame #0, expecting #85
+
+I00174 bootstrap.c:101] Processing frame #85, expecting #85
+
+I00175 bootstrap.c:101] Processing frame #0, expecting #86
+
+I00176 bootstrap.c:101] Processing frame #86, expecting #86
+
+I00177 bootstrap.c:101] Processing frame #0, expecting #87
+
+I00178 bootstrap.c:101] Processing frame #87, expecting #87
+
+I00179 bootstrap.c:101] Processing frame #0, expecting #88
+
+I00180 bootstrap.c:101] Processing frame #88, expecting #88
+
+I00181 bootstrap.c:101] Processing frame #0, expecting #89
+
+I00182 bootstrap.c:101] Processing frame #89, expecting #89
+
+I00183 bootstrap.c:101] Processing frame #0, expecting #90
+
+I00184 bootstrap.c:101] Processing frame #90, expecting #90
+
+I00185 bootstrap.c:101] Processing frame #0, expecting #91
+
+I00186 bootstrap.c:101] Processing frame #91, expecting #91
+
+I00187 bootstrap.c:101] Processing frame #0, expecting #92
+
+I00188 bootstrap.c:101] Processing frame #92, expecting #92
+
+I00189 bootstrap.c:101] Processing frame #0, expecting #93
+
+I00190 bootstrap.c:101] Processing frame #93, expecting #93
+
+I00191 bootstrap.c:101] Processing frame #0, expecting #94
+
+I00192 bootstrap.c:101] Processing frame #94, expecting #94
+
+I00193 bootstrap.c:101] Processing frame #0, expecting #95
+
+I00194 bootstrap.c:101] Processing frame #95, expecting #95
+
+I00195 bootstrap.c:101] Processing frame #0, expecting #96
+
+I00196 bootstrap.c:101] Processing frame #96, expecting #96
+
+I00197 bootstrap.c:101] Processing frame #0, expecting #97
+
+I00198 bootstrap.c:101] Processing frame #97, expecting #97
+
+I00199 bootstrap.c:101] Processing frame #0, expecting #98
+
+I00200 bootstrap.c:101] Processing frame #98, expecting #98
+
+I00201 bootstrap.c:101] Processing frame #0, expecting #99
+
+I00202 bootstrap.c:101] Processing frame #99, expecting #99
+
+I00203 bootstrap.c:101] Processing frame #0, expecting #100
+
+I00204 bootstrap.c:101] Processing frame #100, expecting #100
+
+I00205 bootstrap.c:101] Processing frame #0, expecting #101
+
+I00206 bootstrap.c:101] Processing frame #101, expecting #101
+
+I00207 bootstrap.c:101] Processing frame #0, expecting #102
+
+I00208 bootstrap.c:101] Processing frame #102, expecting #102
+
+I00209 bootstrap.c:101] Processing frame #0, expecting #103
+
+I00210 bootstrap.c:101] Processing frame #103, expecting #103
+
+I00211 bootstrap.c:101] Processing frame #0, expecting #104
+
+I00212 bootstrap.c:101] Processing frame #104, expecting #104
+
+I00213 bootstrap.c:101] Processing frame #0, expecting #105
+
+I00214 bootstrap.c:101] Processing frame #105, expecting #105
+
+I00215 bootstrap.c:101] Processing frame #0, expecting #106
+
+I00216 bootstrap.c:101] Processing frame #106, expecting #106
+
+I00217 bootstrap.c:101] Processing frame #0, expecting #107
+
+I00218 bootstrap.c:101] Processing frame #107, expecting #107
+
+I00219 bootstrap.c:101] Processing frame #0, expecting #108
+
+I00220 bootstrap.c:101] Processing frame #108, expecting #108
+
+I00221 bootstrap.c:101] Processing frame #0, expecting #109
+
+I00222 bootstrap.c:101] Processing frame #109, expecting #109
+
+I00223 bootstrap.c:101] Processing frame #0, expecting #110
+
+I00224 bootstrap.c:101] Processing frame #110, expecting #110
+
+I00225 bootstrap.c:101] Processing frame #0, expecting #111
+
+I00226 bootstrap.c:101] Processing frame #111, expecting #111
+
+I00227 bootstrap.c:101] Processing frame #0, expecting #112
+
+I00228 bootstrap.c:101] Processing frame #112, expecting #112
+
+I00229 bootstrap.c:101] Processing frame #0, expecting #113
+
+I00230 bootstrap.c:101] Processing frame #113, expecting #113
+
+I00231 bootstrap.c:101] Processing frame #0, expecting #114
+
+I00232 bootstrap.c:101] Processing frame #114, expecting #114
+
+I00233 bootstrap.c:101] Processing frame #0, expecting #115
+
+I00234 bootstrap.c:101] Processing frame #115, expecting #115
+
+I00235 bootstrap.c:101] Processing frame #0, expecting #116
+
+I00236 bootstrap.c:101] Processing frame #116, expecting #116
+
+I00237 bootstrap.c:101] Processing frame #0, expecting #117
+
+I00238 bootstrap.c:101] Processing frame #117, expecting #117
+
+I00239 bootstrap.c:101] Processing frame #0, expecting #118
+
+I00240 bootstrap.c:101] Processing frame #118, expecting #118
+
+I00241 bootstrap.c:101] Processing frame #0, expecting #119
+
+I00242 bootstrap.c:101] Processing frame #119, expecting #119
+
+I00243 bootstrap.c:101] Processing frame #0, expecting #120
+
+I00244 bootstrap.c:101] Processing frame #120, expecting #120
+
+I00245 bootstrap.c:101] Processing frame #0, expecting #121
+
+I00246 bootstrap.c:101] Processing frame #121, expecting #121
+
+I00247 bootstrap.c:101] Processing frame #0, expecting #122
+
+I00248 bootstrap.c:101] Processing frame #122, expecting #122
+
+I00249 bootstrap.c:101] Processing frame #0, expecting #123
+
+I00250 bootstrap.c:101] Processing frame #123, expecting #123
+
+I00251 bootstrap.c:101] Processing frame #0, expecting #124
+
+I00252 bootstrap.c:101] Processing frame #124, expecting #124
+
+I00253 bootstrap.c:101] Processing frame #0, expecting #125
+
+I00254 bootstrap.c:101] Processing frame #125, expecting #125
+
+I00255 bootstrap.c:101] Processing frame #0, expecting #126
+
+I00256 bootstrap.c:101] Processing frame #126, expecting #126
+
+I00257 bootstrap.c:101] Processing frame #0, expecting #127
+
+I00258 bootstrap.c:101] Processing frame #127, expecting #127
+
+I00259 bootstrap.c:101] Processing frame #0, expecting #128
+
+I00260 bootstrap.c:101] Processing frame #128, expecting #128
+
+I00261 bootstrap.c:101] Processing frame #0, expecting #129
+
+I00262 bootstrap.c:101] Processing frame #129, expecting #129
+
+I00263 bootstrap.c:101] Processing frame #0, expecting #130
+
+I00264 bootstrap.c:101] Processing frame #130, expecting #130
+
+I00265 bootstrap.c:101] Processing frame #0, expecting #131
+
+I00266 bootstrap.c:101] Processing frame #131, expecting #131
+
+I00267 bootstrap.c:101] Processing frame #0, expecting #132
+
+I00268 bootstrap.c:101] Processing frame #132, expecting #132
+
+I00269 bootstrap.c:101] Processing frame #0, expecting #133
+
+I00270 bootstrap.c:101] Processing frame #133, expecting #133
+
+I00271 bootstrap.c:101] Processing frame #0, expecting #134
+
+I00272 bootstrap.c:101] Processing frame #134, expecting #134
+
+I00273 bootstrap.c:101] Processing frame #0, expecting #135
+
+I00274 bootstrap.c:101] Processing frame #135, expecting #135
+
+I00275 bootstrap.c:101] Processing frame #0, expecting #136
+
+I00276 bootstrap.c:101] Processing frame #136, expecting #136
+
+I00277 bootstrap.c:101] Processing frame #0, expecting #137
+
+I00278 bootstrap.c:101] Processing frame #137, expecting #137
+
+I00279 bootstrap.c:101] Processing frame #0, expecting #138
+
+I00280 bootstrap.c:101] Processing frame #138, expecting #138
+
+I00281 bootstrap.c:101] Processing frame #0, expecting #139
+
+I00282 bootstrap.c:101] Processing frame #139, expecting #139
+
+I00283 bootstrap.c:101] Processing frame #0, expecting #140
+
+I00284 bootstrap.c:101] Processing frame #140, expecting #140
+
+I00285 bootstrap.c:101] Processing frame #0, expecting #141
+
+I00286 bootstrap.c:101] Processing frame #141, expecting #141
+
+I00287 bootstrap.c:101] Processing frame #0, expecting #142
+
+I00288 bootstrap.c:101] Processing frame #142, expecting #142
+
+I00289 bootstrap.c:101] Processing frame #0, expecting #143
+
+I00290 bootstrap.c:101] Processing frame #143, expecting #143
+
+I00291 bootstrap.c:101] Processing frame #0, expecting #144
+
+I00292 bootstrap.c:101] Processing frame #144, expecting #144
+
+I00293 bootstrap.c:101] Processing frame #0, expecting #145
+
+I00294 bootstrap.c:101] Processing frame #145, expecting #145
+
+I00295 bootstrap.c:101] Processing frame #0, expecting #146
+
+I00296 bootstrap.c:101] Processing frame #146, expecting #146
+
+I00297 bootstrap.c:101] Processing frame #0, expecting #147
+
+I00298 bootstrap.c:101] Processing frame #147, expecting #147
+
+I00299 bootstrap.c:101] Processing frame #0, expecting #148
+
+I00300 bootstrap.c:101] Processing frame #148, expecting #148
+
+I00301 bootstrap.c:101] Processing frame #0, expecting #149
+
+I00302 bootstrap.c:101] Processing frame #149, expecting #149
+
+I00303 bootstrap.c:101] Processing frame #0, expecting #150
+
+I00304 bootstrap.c:101] Processing frame #150, expecting #150
+
+I00305 bootstrap.c:101] Processing frame #0, expecting #151
+
+I00306 bootstrap.c:101] Processing frame #151, expecting #151
+
+I00307 bootstrap.c:101] Processing frame #0, expecting #152
+
+I00308 bootstrap.c:101] Processing frame #152, expecting #152
+
+I00309 bootstrap.c:101] Processing frame #0, expecting #153
+
+I00310 bootstrap.c:101] Processing frame #153, expecting #153
+
+I00311 bootstrap.c:101] Processing frame #0, expecting #154
+
+I00312 bootstrap.c:101] Processing frame #154, expecting #154
+
+I00313 bootstrap.c:101] Processing frame #0, expecting #155
+
+I00314 bootstrap.c:101] Processing frame #155, expecting #155
+
+I00315 bootstrap.c:101] Processing frame #0, expecting #156
+
+I00316 bootstrap.c:101] Processing frame #156, expecting #156
+
+I00317 bootstrap.c:101] Processing frame #0, expecting #157
+
+I00318 bootstrap.c:101] Processing frame #157, expecting #157
+
+I00319 bootstrap.c:101] Processing frame #0, expecting #158
+
+I00320 bootstrap.c:101] Processing frame #158, expecting #158
+
+I00321 bootstrap.c:101] Processing frame #0, expecting #159
+
+I00322 bootstrap.c:101] Processing frame #159, expecting #159
+
+I00323 bootstrap.c:101] Processing frame #0, expecting #160
+
+I00324 bootstrap.c:101] Processing frame #160, expecting #160
+
+I00325 bootstrap.c:101] Processing frame #0, expecting #161
+
+I00326 bootstrap.c:101] Processing frame #161, expecting #161
+
+I00327 bootstrap.c:101] Processing frame #0, expecting #162
+
+I00328 bootstrap.c:101] Processing frame #162, expecting #162
+
+I00329 bootstrap.c:101] Processing frame #0, expecting #163
+
+I00330 bootstrap.c:101] Processing frame #163, expecting #163
+
+I00331 bootstrap.c:101] Processing frame #0, expecting #164
+
+I00332 bootstrap.c:101] Processing frame #164, expecting #164
+
+I00333 bootstrap.c:101] Processing frame #0, expecting #165
+
+I00334 bootstrap.c:101] Processing frame #165, expecting #165
+
+I00335 bootstrap.c:101] Processing frame #0, expecting #166
+
+I00336 bootstrap.c:101] Processing frame #166, expecting #166
+
+I00337 bootstrap.c:101] Processing frame #0, expecting #167
+
+I00338 bootstrap.c:101] Processing frame #167, expecting #167
+
+I00339 bootstrap.c:101] Processing frame #0, expecting #168
+
+I00340 bootstrap.c:101] Processing frame #168, expecting #168
+
+I00341 bootstrap.c:101] Processing frame #0, expecting #169
+
+I00342 bootstrap.c:101] Processing frame #169, expecting #169
+
+I00343 bootstrap.c:101] Processing frame #0, expecting #170
+
+I00344 bootstrap.c:101] Processing frame #170, expecting #170
+
+I00345 bootstrap.c:101] Processing frame #0, expecting #171
+
+I00346 bootstrap.c:101] Processing frame #171, expecting #171
+
+I00347 bootstrap.c:101] Processing frame #0, expecting #172
+
+I00348 bootstrap.c:101] Processing frame #172, expecting #172
+
+I00349 bootstrap.c:101] Processing frame #0, expecting #173
+
+I00350 bootstrap.c:101] Processing frame #173, expecting #173
+
+I00351 bootstrap.c:101] Processing frame #0, expecting #174
+
+I00352 bootstrap.c:101] Processing frame #174, expecting #174
+
+I00353 bootstrap.c:101] Processing frame #0, expecting #175
+
+I00354 bootstrap.c:101] Processing frame #175, expecting #175
+
+I00355 bootstrap.c:101] Processing frame #0, expecting #176
+
+I00356 bootstrap.c:101] Processing frame #176, expecting #176
+
+I00357 bootstrap.c:101] Processing frame #0, expecting #177
+
+I00358 bootstrap.c:101] Processing frame #177, expecting #177
+
+I00359 bootstrap.c:101] Processing frame #0, expecting #178
+
+I00360 bootstrap.c:101] Processing frame #178, expecting #178
+
+I00361 bootstrap.c:101] Processing frame #0, expecting #179
+
+I00362 bootstrap.c:101] Processing frame #179, expecting #179
+
+I00363 bootstrap.c:101] Processing frame #0, expecting #180
+
+I00364 bootstrap.c:101] Processing frame #180, expecting #180
+
+I00365 bootstrap.c:101] Processing frame #0, expecting #181
+
+I00366 bootstrap.c:101] Processing frame #181, expecting #181
+
+I00367 bootstrap.c:101] Processing frame #0, expecting #182
+
+I00368 bootstrap.c:101] Processing frame #182, expecting #182
+
+I00369 bootstrap.c:101] Processing frame #0, expecting #183
+
+I00370 bootstrap.c:101] Processing frame #183, expecting #183
+
+I00371 bootstrap.c:101] Processing frame #0, expecting #184
+
+I00372 bootstrap.c:101] Processing frame #184, expecting #184
+
+I00373 bootstrap.c:101] Processing frame #0, expecting #185
+
+I00374 bootstrap.c:101] Processing frame #185, expecting #185
+
+I00375 bootstrap.c:101] Processing frame #0, expecting #186
+
+I00376 bootstrap.c:101] Processing frame #186, expecting #186
+
+I00377 bootstrap.c:101] Processing frame #0, expecting #187
+
+I00378 bootstrap.c:101] Processing frame #187, expecting #187
+
+I00379 bootstrap.c:101] Processing frame #0, expecting #188
+
+I00380 bootstrap.c:101] Processing frame #188, expecting #188
+
+I00381 bootstrap.c:101] Processing frame #0, expecting #189
+
+I00382 bootstrap.c:101] Processing frame #189, expecting #189
+
+I00383 bootstrap.c:101] Processing frame #0, expecting #190
+
+I00384 bootstrap.c:101] Processing frame #190, expecting #190
+
+I00385 bootstrap.c:101] Processing frame #0, expecting #191
+
+I00386 bootstrap.c:101] Processing frame #191, expecting #191
+
+I00387 bootstrap.c:101] Processing frame #0, expecting #192
+
+I00388 bootstrap.c:101] Processing frame #192, expecting #192
+
+I00389 bootstrap.c:101] Processing frame #0, expecting #193
+
+I00390 bootstrap.c:101] Processing frame #193, expecting #193
+
+I00391 bootstrap.c:101] Processing frame #0, expecting #194
+
+I00392 bootstrap.c:101] Processing frame #194, expecting #194
+
+I00393 bootstrap.c:101] Processing frame #0, expecting #195
+
+I00394 bootstrap.c:101] Processing frame #195, expecting #195
+
+I00395 bootstrap.c:101] Processing frame #0, expecting #196
+
+I00396 bootstrap.c:101] Processing frame #196, expecting #196
+
+I00397 bootstrap.c:101] Processing frame #0, expecting #197
+
+I00398 bootstrap.c:101] Processing frame #197, expecting #197
+
+I00399 bootstrap.c:101] Processing frame #0, expecting #198
+
+I00400 bootstrap.c:101] Processing frame #198, expecting #198
+
+I00401 bootstrap.c:101] Processing frame #0, expecting #199
+
+I00402 bootstrap.c:101] Processing frame #199, expecting #199
+
+I00403 bootstrap.c:101] Processing frame #0, expecting #200
+
+I00404 bootstrap.c:101] Processing frame #200, expecting #200
+
+I00405 bootstrap.c:101] Processing frame #0, expecting #201
+
+I00406 bootstrap.c:101] Processing frame #201, expecting #201
+
+I00407 bootstrap.c:101] Processing frame #0, expecting #202
+
+I00408 bootstrap.c:101] Processing frame #202, expecting #202
+
+I00409 bootstrap.c:101] Processing frame #0, expecting #203
+
+I00410 bootstrap.c:101] Processing frame #203, expecting #203
+
+I00411 bootstrap.c:101] Processing frame #0, expecting #204
+
+I00412 bootstrap.c:101] Processing frame #204, expecting #204
+
+I00413 bootstrap.c:101] Processing frame #0, expecting #205
+
+I00414 bootstrap.c:101] Processing frame #205, expecting #205
+
+I00415 bootstrap.c:101] Processing frame #0, expecting #206
+
+I00416 bootstrap.c:101] Processing frame #206, expecting #206
+
+I00417 bootstrap.c:101] Processing frame #0, expecting #207
+
+I00418 bootstrap.c:101] Processing frame #207, expecting #207
+
+I00419 bootstrap.c:101] Processing frame #0, expecting #208
+
+I00420 bootstrap.c:101] Processing frame #208, expecting #208
+
+I00421 bootstrap.c:101] Processing frame #0, expecting #209
+
+I00422 bootstrap.c:101] Processing frame #209, expecting #209
+
+I00423 bootstrap.c:101] Processing frame #0, expecting #210
+
+I00424 bootstrap.c:101] Processing frame #210, expecting #210
+
+I00425 bootstrap.c:101] Processing frame #0, expecting #211
+
+I00426 bootstrap.c:101] Processing frame #211, expecting #211
+
+I00427 bootstrap.c:101] Processing frame #0, expecting #212
+
+I00428 bootstrap.c:101] Processing frame #212, expecting #212
+
+I00429 bootstrap.c:101] Processing frame #0, expecting #213
+
+I00430 bootstrap.c:101] Processing frame #213, expecting #213
+
+I00431 bootstrap.c:101] Processing frame #0, expecting #214
+
+I00432 bootstrap.c:101] Processing frame #214, expecting #214
+
+I00433 bootstrap.c:101] Processing frame #0, expecting #215
+
+I00434 bootstrap.c:101] Processing frame #215, expecting #215
+
+I00435 bootstrap.c:101] Processing frame #0, expecting #216
+
+I00436 bootstrap.c:101] Processing frame #216, expecting #216
+
+I00437 bootstrap.c:101] Processing frame #0, expecting #217
+
+I00438 bootstrap.c:101] Processing frame #217, expecting #217
+
+I00439 bootstrap.c:101] Processing frame #0, expecting #218
+
+I00440 bootstrap.c:101] Processing frame #218, expecting #218
+
+I00441 bootstrap.c:101] Processing frame #0, expecting #219
+
+I00442 bootstrap.c:101] Processing frame #219, expecting #219
+
+I00443 bootstrap.c:101] Processing frame #0, expecting #220
+
+I00444 bootstrap.c:101] Processing frame #220, expecting #220
+
+I00445 bootstrap.c:101] Processing frame #0, expecting #221
+
+I00446 bootstrap.c:101] Processing frame #221, expecting #221
+
+I00447 bootstrap.c:101] Processing frame #0, expecting #222
+
+I00448 bootstrap.c:101] Processing frame #222, expecting #222
+
+I00449 bootstrap.c:101] Processing frame #0, expecting #223
+
+I00450 bootstrap.c:101] Processing frame #223, expecting #223
+
+I00451 bootstrap.c:101] Processing frame #0, expecting #224
+
+I00452 bootstrap.c:101] Processing frame #224, expecting #224
+
+I00453 bootstrap.c:101] Processing frame #0, expecting #225
+
+I00454 bootstrap.c:101] Processing frame #225, expecting #225
+
+I00455 bootstrap.c:101] Processing frame #0, expecting #226
+
+I00456 bootstrap.c:101] Processing frame #226, expecting #226
+
+I00457 bootstrap.c:101] Processing frame #0, expecting #227
+
+I00458 bootstrap.c:101] Processing frame #227, expecting #227
+
+I00459 bootstrap.c:101] Processing frame #0, expecting #228
+
+I00460 bootstrap.c:101] Processing frame #228, expecting #228
+
+I00461 bootstrap.c:101] Processing frame #0, expecting #229
+
+I00462 bootstrap.c:101] Processing frame #229, expecting #229
+
+I00463 bootstrap.c:101] Processing frame #0, expecting #230
+
+I00464 bootstrap.c:101] Processing frame #230, expecting #230
+
+I00465 bootstrap.c:101] Processing frame #0, expecting #231
+
+I00466 bootstrap.c:101] Processing frame #231, expecting #231
+
+I00467 bootstrap.c:101] Processing frame #0, expecting #232
+
+I00468 bootstrap.c:101] Processing frame #232, expecting #232
+
+I00469 bootstrap.c:101] Processing frame #0, expecting #233
+
+I00470 bootstrap.c:101] Processing frame #233, expecting #233
+
+I00471 bootstrap.c:101] Processing frame #0, expecting #234
+
+I00472 bootstrap.c:101] Processing frame #234, expecting #234
+
+I00473 bootstrap.c:101] Processing frame #0, expecting #235
+
+I00474 bootstrap.c:101] Processing frame #235, expecting #235
+
+I00475 bootstrap.c:101] Processing frame #0, expecting #236
+
+I00476 bootstrap.c:101] Processing frame #236, expecting #236
+
+I00477 bootstrap.c:101] Processing frame #0, expecting #237
+
+I00478 bootstrap.c:101] Processing frame #237, expecting #237
+
+I00479 bootstrap.c:101] Processing frame #0, expecting #238
+
+I00480 bootstrap.c:101] Processing frame #238, expecting #238
+
+I00481 bootstrap.c:101] Processing frame #0, expecting #239
+
+I00482 bootstrap.c:101] Processing frame #239, expecting #239
+
+I00483 bootstrap.c:101] Processing frame #0, expecting #240
+
+I00484 bootstrap.c:101] Processing frame #240, expecting #240
+
+I00485 bootstrap.c:101] Processing frame #0, expecting #241
+
+I00486 bootstrap.c:101] Processing frame #241, expecting #241
+
+I00487 bootstrap.c:101] Processing frame #0, expecting #242
+
+I00488 bootstrap.c:101] Processing frame #242, expecting #242
+
+I00489 bootstrap.c:101] Processing frame #0, expecting #243
+
+I00490 bootstrap.c:101] Processing frame #243, expecting #243
+
+I00491 bootstrap.c:101] Processing frame #0, expecting #244
+
+I00492 bootstrap.c:101] Processing frame #244, expecting #244
+
+I00493 bootstrap.c:101] Processing frame #0, expecting #245
+
+I00494 bootstrap.c:101] Processing frame #245, expecting #245
+
+I00495 bootstrap.c:101] Processing frame #0, expecting #246
+
+I00496 bootstrap.c:101] Processing frame #246, expecting #246
+
+I00497 bootstrap.c:101] Processing frame #0, expecting #247
+
+I00498 bootstrap.c:101] Processing frame #247, expecting #247
+
+I00499 bootstrap.c:101] Processing frame #0, expecting #248
+
+I00500 bootstrap.c:101] Processing frame #248, expecting #248
+
+I00501 bootstrap.c:101] Processing frame #0, expecting #249
+
+I00502 bootstrap.c:101] Processing frame #249, expecting #249
+
+I00503 bootstrap.c:101] Processing frame #0, expecting #250
+
+I00504 bootstrap.c:101] Processing frame #250, expecting #250
+
+I00505 bootstrap.c:101] Processing frame #0, expecting #251
+
+I00506 bootstrap.c:101] Processing frame #251, expecting #251
+
+I00507 bootstrap.c:101] Processing frame #0, expecting #252
+
+I00508 bootstrap.c:101] Processing frame #252, expecting #252
+
+I00509 bootstrap.c:101] Processing frame #0, expecting #253
+
+I00510 bootstrap.c:101] Processing frame #253, expecting #253
+
+I00511 bootstrap.c:101] Processing frame #0, expecting #254
+
+I00512 bootstrap.c:101] Processing frame #254, expecting #254
+
+I00513 bootstrap.c:101] Processing frame #0, expecting #255
+
+I00514 bootstrap.c:101] Processing frame #255, expecting #255
+
+I00515 bootstrap.c:101] Processing frame #0, expecting #256
+
+I00516 bootstrap.c:101] Processing frame #256, expecting #256
+
+I00517 bootstrap.c:101] Processing frame #0, expecting #257
+
+I00518 bootstrap.c:101] Processing frame #257, expecting #257
+
+I00519 bootstrap.c:101] Processing frame #0, expecting #258
+
+I00520 bootstrap.c:101] Processing frame #258, expecting #258
+
+I00521 bootstrap.c:101] Processing frame #0, expecting #259
+
+I00522 bootstrap.c:101] Processing frame #259, expecting #259
+
+I00523 bootstrap.c:101] Processing frame #0, expecting #260
+
+I00524 bootstrap.c:101] Processing frame #260, expecting #260
+
+I00525 bootstrap.c:101] Processing frame #0, expecting #261
+
+I00526 bootstrap.c:101] Processing frame #261, expecting #261
+
+I00527 bootstrap.c:101] Processing frame #0, expecting #262
+
+I00528 bootstrap.c:101] Processing frame #262, expecting #262
+
+I00529 bootstrap.c:101] Processing frame #0, expecting #263
+
+I00530 bootstrap.c:101] Processing frame #263, expecting #263
+
+I00531 bootstrap.c:101] Processing frame #0, expecting #264
+
+I00532 bootstrap.c:101] Processing frame #264, expecting #264
+
+I00533 bootstrap.c:101] Processing frame #0, expecting #265
+
+I00534 bootstrap.c:101] Processing frame #265, expecting #265
+
+I00535 bootstrap.c:101] Processing frame #0, expecting #266
+
+I00536 bootstrap.c:101] Processing frame #266, expecting #266
+
+I00537 bootstrap.c:134] Bootstrap: DONE!
+
+I00538 boot_rom.c:61] Boot ROM initialisation has completed, jump into flash!
+
+OpenTitan initialisation complete. Entering main loop
+
+### RESULTS ###
+benchmark: back-to-back memory access as described by lmbench and
+           confirms there is no data cache, distance 16
+description: back-to-back attempts to blow out the data cache
+             by accessing at the start of each possible block
+0, 6271
+1, 6271
+2, 6271
+3, 6271
+4, 6271
+5, 6271
+6, 6271
+7, 6271
+8, 6271
+9, 6271
+10, 6271
+11, 6271
+12, 6271
+13, 6271
+14, 6271
+15, 6271
+16, 6271
+17, 6271
+18, 6271
+19, 6271
+20, 6271
+21, 6271
+22, 6271
+23, 6271
+24, 6271
+25, 6271
+26, 6271
+27, 6271
+28, 6271
+29, 6271
+30, 6271
+31, 6271
+32, 6271
+33, 6271
+34, 6271
+35, 6271
+36, 6271
+37, 6271
+38, 6271
+39, 6271
+40, 6271
+41, 6271
+42, 6271
+43, 6271
+44, 6271
+45, 6271
+46, 6271
+47, 6271
+48, 6271
+49, 6271
+50, 6271
+51, 6271
+52, 6271
+53, 6271
+54, 6271
+55, 6271
+56, 6271
+57, 6271
+58, 6271
+59, 6271
+60, 6271
+61, 6271
+62, 6271
+63, 6271
+64, 6271
+65, 6271
+66, 6271
+67, 6271
+68, 6271
+69, 6271
+70, 6271
+71, 6271
+72, 6271
+73, 6271
+74, 6271
+75, 6271
+76, 6271
+77, 6271
+78, 6271
+79, 6271
+80, 6271
+81, 6271
+82, 6271
+83, 6271
+84, 6271
+85, 6271
+86, 6271
+87, 6271
+88, 6271
+89, 6271
+90, 6271
+91, 6271
+92, 6271
+93, 6271
+94, 6271
+95, 6271
+96, 6271
+97, 6271
+98, 6271
+99, 6271
+100, 6271
+101, 6271
+102, 6271
+103, 6271
+104, 6271
+105, 6271
+106, 6271
+107, 6271
+108, 6271
+109, 6271
+110, 6271
+111, 6271
+112, 6271
+113, 6271
+114, 6271
+115, 6271
+116, 6271
+117, 6271
+118, 6271
+119, 6271
+120, 6271
+121, 6271
+122, 6271
+123, 6271
+124, 6271
+125, 6271
+126, 6271
+127, 6271
+128, 6271
+129, 6271
+130, 6271
+131, 6271
+132, 6271
+133, 6271
+134, 6271
+135, 6271
+136, 6271
+137, 6271
+138, 6271
+139, 6271
+140, 6271
+141, 6271
+142, 6271
+143, 6271
+144, 6271
+145, 6271
+146, 6271
+147, 6271
+148, 6271
+149, 6271
+150, 6271
+151, 6271
+152, 6271
+153, 6271
+154, 6271
+155, 6271
+156, 6271
+157, 6271
+158, 6271
+159, 6271
+160, 6271
+161, 6271
+162, 6271
+163, 6271
+164, 6271
+165, 6271
+166, 6271
+167, 6271
+168, 6271
+169, 6271
+170, 6271
+171, 6271
+172, 6271
+173, 6271
+174, 6271
+175, 6271
+176, 6271
+177, 6271
+178, 6271
+179, 6271
+180, 6271
+181, 6271
+182, 6271
+183, 6271
+184, 6271
+185, 6271
+186, 6271
+187, 6271
+188, 6271
+189, 6271
+190, 6271
+191, 6271
+192, 6271
+193, 6271
+194, 6271
+195, 6271
+196, 6271
+197, 6271
+198, 6271
+199, 6271
+200, 6271
+201, 6271
+202, 6271
+203, 6271
+204, 6271
+205, 6271
+206, 6271
+207, 6271
+208, 6271
+209, 6271
+210, 6271
+211, 6271
+212, 6271
+213, 6271
+214, 6271
+215, 6271
+216, 6271
+217, 6271
+218, 6271
+219, 6271
+220, 6271
+221, 6271
+222, 6271
+223, 6271
+224, 6271
+225, 6271
+226, 6271
+227, 6271
+228, 6271
+229, 6271
+230, 6271
+231, 6271
+232, 6271
+233, 6271
+234, 6271
+235, 6271
+236, 6271
+237, 6271
+238, 6271
+239, 6271
+240, 6271
+241, 6271
+242, 6271
+243, 6271
+244, 6271
+245, 6271
+246, 6271
+247, 6271
+248, 6271
+249, 6271
+250, 6271
+251, 6271
+252, 6271
+253, 6271
+254, 6271
+255, 6271
+256, 6271
+257, 6271
+258, 6271
+259, 6271
+260, 6271
+261, 6271
+262, 6271
+263, 6271
+264, 6271
+265, 6271
+266, 6271
+267, 6271
+268, 6271
+269, 6271
+270, 6271
+271, 6271
+272, 6271
+273, 6271
+274, 6271
+275, 6271
+276, 6271
+277, 6271
+278, 6271
+279, 6271
+280, 6271
+281, 6271
+282, 6271
+283, 6271
+284, 6271
+285, 6271
+286, 6271
+287, 6271
+288, 6271
+289, 6271
+290, 6271
+291, 6271
+292, 6271
+293, 6271
+294, 6271
+295, 6271
+296, 6271
+297, 6271
+298, 6271
+299, 6271
+300, 6271
+301, 6271
+302, 6271
+303, 6271
+304, 6271
+305, 6271
+306, 6271
+307, 6271
+308, 6271
+309, 6271
+310, 6271
+311, 6271
+312, 6271
+313, 6271
+314, 6271
+315, 6271
+316, 6271
+317, 6271
+318, 6271
+319, 6271
+320, 6271
+321, 6271
+322, 6271
+323, 6271
+324, 6271
+325, 6271
+326, 6271
+327, 6271
+328, 6271
+329, 6271
+330, 6271
+331, 6271
+332, 6271
+333, 6271
+334, 6271
+335, 6271
+336, 6271
+337, 6271
+338, 6271
+339, 6271
+340, 6271
+341, 6271
+342, 6271
+343, 6271
+344, 6271
+345, 6271
+346, 6271
+347, 6271
+348, 6271
+349, 6271
+350, 6271
+351, 6271
+352, 6271
+353, 6271
+354, 6271
+355, 6271
+356, 6271
+357, 6271
+358, 6271
+359, 6271
+360, 6271
+361, 6271
+362, 6271
+363, 6271
+364, 6271
+365, 6271
+366, 6271
+367, 6271
+368, 6271
+369, 6271
+370, 6271
+371, 6271
+372, 6271
+373, 6271
+374, 6271
+375, 6271
+376, 6271
+377, 6271
+378, 6271
+379, 6271
+380, 6271
+381, 6271
+382, 6271
+383, 6271
+384, 6271
+385, 6271
+386, 6271
+387, 6271
+388, 6271
+389, 6271
+390, 6271
+391, 6271
+392, 6271
+393, 6271
+394, 6271
+395, 6271
+396, 6271
+397, 6271
+398, 6271
+399, 6271
+400, 6271
+401, 6271
+402, 6271
+403, 6271
+404, 6271
+405, 6271
+406, 6271
+407, 6271
+408, 6271
+409, 6271
+410, 6271
+411, 6271
+412, 6271
+413, 6271
+414, 6271
+415, 6271
+416, 6271
+417, 6271
+418, 6271
+419, 6271
+420, 6271
+421, 6271
+422, 6271
+423, 6271
+424, 6271
+425, 6271
+426, 6271
+427, 6271
+428, 6271
+429, 6271
+430, 6271
+431, 6271
+432, 6271
+433, 6271
+434, 6271
+435, 6271
+436, 6271
+437, 6271
+438, 6271
+439, 6271
+440, 6271
+441, 6271
+442, 6271
+443, 6271
+444, 6271
+445, 6271
+446, 6271
+447, 6271
+448, 6271
+449, 6271
+450, 6271
+451, 6271
+452, 6271
+453, 6271
+454, 6271
+455, 6271
+456, 6271
+457, 6271
+458, 6271
+459, 6271
+460, 6271
+461, 6271
+462, 6271
+463, 6271
+464, 6271
+465, 6271
+466, 6271
+467, 6271
+468, 6271
+469, 6271
+470, 6271
+471, 6271
+472, 6271
+473, 6271
+474, 6271
+475, 6271
+476, 6271
+477, 6271
+478, 6271
+479, 6271
+480, 6271
+481, 6271
+482, 6271
+483, 6271
+484, 6271
+485, 6271
+486, 6271
+487, 6271
+488, 6271
+489, 6271
+490, 6271
+491, 6271
+492, 6271
+493, 6271
+494, 6271
+495, 6271
+496, 6271
+497, 6271
+498, 6271
+499, 6271
+500, 6271
+501, 6271
+502, 6271
+503, 6271
+504, 6271
+505, 6271
+506, 6271
+507, 6271
+508, 6271
+509, 6271
+510, 6271
+511, 6271
+512, 6271
+513, 6271
+514, 6271
+515, 6271
+516, 6271
+517, 6271
+518, 6271
+519, 6271
+520, 6271
+521, 6271
+522, 6271
+523, 6271
+524, 6271
+525, 6271
+526, 6271
+527, 6271
+528, 6271
+529, 6271
+530, 6271
+531, 6271
+532, 6271
+533, 6271
+534, 6271
+535, 6271
+536, 6271
+537, 6271
+538, 6271
+539, 6271
+540, 6271
+541, 6271
+542, 6271
+543, 6271
+544, 6271
+545, 6271
+546, 6271
+547, 6271
+548, 6271
+549, 6271
+550, 6271
+551, 6271
+552, 6271
+553, 6271
+554, 6271
+555, 6271
+556, 6271
+557, 6271
+558, 6271
+559, 6271
+560, 6271
+561, 6271
+562, 6271
+563, 6271
+564, 6271
+565, 6271
+566, 6271
+567, 6271
+568, 6271
+569, 6271
+570, 6271
+571, 6271
+572, 6271
+573, 6271
+574, 6271
+575, 6271
+576, 6271
+577, 6271
+578, 6271
+579, 6271
+580, 6271
+581, 6271
+582, 6271
+583, 6271
+584, 6271
+585, 6271
+586, 6271
+587, 6271
+588, 6271
+589, 6271
+590, 6271
+591, 6271
+592, 6271
+593, 6271
+594, 6271
+595, 6271
+596, 6271
+597, 6271
+598, 6271
+599, 6271
+600, 6271
+601, 6271
+602, 6271
+603, 6271
+604, 6271
+605, 6271
+606, 6271
+607, 6271
+608, 6271
+609, 6271
+610, 6271
+611, 6271
+612, 6271
+613, 6271
+614, 6271
+615, 6271
+616, 6271
+617, 6271
+618, 6271
+619, 6271
+620, 6271
+621, 6271
+622, 6271
+623, 6271
+624, 6271
+625, 6271
+626, 6271
+627, 6271
+628, 6271
+629, 6271
+630, 6271
+631, 6271
+632, 6271
+633, 6271
+634, 6271
+635, 6271
+636, 6271
+637, 6271
+638, 6271
+639, 6271
+640, 6271
+641, 6271
+642, 6271
+643, 6271
+644, 6271
+645, 6271
+646, 6271
+647, 6271
+648, 6271
+649, 6271
+650, 6271
+651, 6271
+652, 6271
+653, 6271
+654, 6271
+655, 6271
+656, 6271
+657, 6271
+658, 6271
+659, 6271
+660, 6271
+661, 6271
+662, 6271
+663, 6271
+664, 6271
+665, 6271
+666, 6271
+667, 6271
+668, 6271
+669, 6271
+670, 6271
+671, 6271
+672, 6271
+673, 6271
+674, 6271
+675, 6271
+676, 6271
+677, 6271
+678, 6271
+679, 6271
+680, 6271
+681, 6271
+682, 6271
+683, 6271
+684, 6271
+685, 6271
+686, 6271
+687, 6271
+688, 6271
+689, 6271
+690, 6271
+691, 6271
+692, 6271
+693, 6271
+694, 6271
+695, 6271
+696, 6271
+697, 6271
+698, 6271
+699, 6271
+700, 6271
+701, 6271
+702, 6271
+703, 6271
+704, 6271
+705, 6271
+706, 6271
+707, 6271
+708, 6271
+709, 6271
+710, 6271
+711, 6271
+712, 6271
+713, 6271
+714, 6271
+715, 6271
+716, 6271
+717, 6271
+718, 6271
+719, 6271
+720, 6271
+721, 6271
+722, 6271
+723, 6271
+724, 6271
+725, 6271
+726, 6271
+727, 6271
+728, 6271
+729, 6271
+730, 6271
+731, 6271
+732, 6271
+733, 6271
+734, 6271
+735, 6271
+736, 6271
+737, 6271
+738, 6271
+739, 6271
+740, 6271
+741, 6271
+742, 6271
+743, 6271
+744, 6271
+745, 6271
+746, 6271
+747, 6271
+748, 6271
+749, 6271
+750, 6271
+751, 6271
+752, 6271
+753, 6271
+754, 6271
+755, 6271
+756, 6271
+757, 6271
+758, 6271
+759, 6271
+760, 6271
+761, 6271
+762, 6271
+763, 6271
+764, 6271
+765, 6271
+766, 6271
+767, 6271
+768, 6271
+769, 6271
+770, 6271
+771, 6271
+772, 6271
+773, 6271
+774, 6271
+775, 6271
+776, 6271
+777, 6271
+778, 6271
+779, 6271
+780, 6271
+781, 6271
+782, 6271
+783, 6271
+784, 6271
+785, 6271
+786, 6271
+787, 6271
+788, 6271
+789, 6271
+790, 6271
+791, 6271
+792, 6271
+793, 6271
+794, 6271
+795, 6271
+796, 6271
+797, 6271
+798, 6271
+799, 6271
+800, 6271
+801, 6271
+802, 6271
+803, 6271
+804, 6271
+805, 6271
+806, 6271
+807, 6271
+808, 6271
+809, 6271
+810, 6271
+811, 6271
+812, 6271
+813, 6271
+814, 6271
+815, 6271
+816, 6271
+817, 6271
+818, 6271
+819, 6271
+820, 6271
+821, 6271
+822, 6271
+823, 6271
+824, 6271
+825, 6271
+826, 6271
+827, 6271
+828, 6271
+829, 6271
+830, 6271
+831, 6271
+832, 6271
+833, 6271
+834, 6271
+835, 6271
+836, 6271
+837, 6271
+838, 6271
+839, 6271
+840, 6271
+841, 6271
+842, 6271
+843, 6271
+844, 6271
+845, 6271
+846, 6271
+847, 6271
+848, 6271
+849, 6271
+850, 6271
+851, 6271
+852, 6271
+853, 6271
+854, 6271
+855, 6271
+856, 6271
+857, 6271
+858, 6271
+859, 6271
+860, 6271
+861, 6271
+862, 6271
+863, 6271
+864, 6271
+865, 6271
+866, 6271
+867, 6271
+868, 6271
+869, 6271
+870, 6271
+871, 6271
+872, 6271
+873, 6271
+874, 6271
+875, 6271
+876, 6271
+877, 6271
+878, 6271
+879, 6271
+880, 6271
+881, 6271
+882, 6271
+883, 6271
+884, 6271
+885, 6271
+886, 6271
+887, 6271
+888, 6271
+889, 6271
+890, 6271
+891, 6271
+892, 6271
+893, 6271
+894, 6271
+895, 6271
+896, 6271
+897, 6271
+898, 6271
+899, 6271
+900, 6271
+901, 6271
+902, 6271
+903, 6271
+904, 6271
+905, 6271
+906, 6271
+907, 6271
+908, 6271
+909, 6271
+910, 6271
+911, 6271
+912, 6271
+913, 6271
+914, 6271
+915, 6271
+916, 6271
+917, 6271
+918, 6271
+919, 6271
+920, 6271
+921, 6271
+922, 6271
+923, 6271
+924, 6271
+925, 6271
+926, 6271
+927, 6271
+928, 6271
+929, 6271
+930, 6271
+931, 6271
+932, 6271
+933, 6271
+934, 6271
+935, 6271
+936, 6271
+937, 6271
+938, 6271
+939, 6271
+940, 6271
+941, 6271
+942, 6271
+943, 6271
+944, 6271
+945, 6271
+946, 6271
+947, 6271
+948, 6271
+949, 6271
+950, 6271
+951, 6271
+952, 6271
+953, 6271
+954, 6271
+955, 6271
+956, 6271
+957, 6271
+958, 6271
+959, 6271
+960, 6271
+961, 6271
+962, 6271
+963, 6271
+964, 6271
+965, 6271
+966, 6271
+967, 6271
+968, 6271
+969, 6271
+970, 6271
+971, 6271
+972, 6271
+973, 6271
+974, 6271
+975, 6271
+976, 6271
+977, 6271
+978, 6271
+979, 6271
+980, 6271
+981, 6271
+982, 6271
+983, 6271
+984, 6271
+985, 6271
+986, 6271
+987, 6271
+988, 6271
+989, 6271
+990, 6271
+991, 6271
+992, 6271
+993, 6271
+994, 6271
+995, 6271
+996, 6271
+997, 6271
+998, 6271
+999, 6271
+### RESULTS ###
+benchmark: back-to-back memory access as described by lmbench and
+           confirms there is no data cache, distance 32
+description: back-to-back attempts to blow out the data cache
+             by accessing at the start of each possible block
+0, 6271
+1, 6271
+2, 6271
+3, 6271
+4, 6271
+5, 6271
+6, 6271
+7, 6271
+8, 6271
+9, 6271
+10, 6271
+11, 6271
+12, 6271
+13, 6271
+14, 6271
+15, 6271
+16, 6271
+17, 6271
+18, 6271
+19, 6271
+20, 6271
+21, 6271
+22, 6271
+23, 6271
+24, 6271
+25, 6271
+26, 6271
+27, 6271
+28, 6271
+29, 6271
+30, 6271
+31, 6271
+32, 6271
+33, 6271
+34, 6271
+35, 6271
+36, 6271
+37, 6271
+38, 6271
+39, 6271
+40, 6271
+41, 6271
+42, 6271
+43, 6271
+44, 6271
+45, 6271
+46, 6271
+47, 6271
+48, 6271
+49, 6271
+50, 6271
+51, 6271
+52, 6271
+53, 6271
+54, 6271
+55, 6271
+56, 6271
+57, 6271
+58, 6271
+59, 6271
+60, 6271
+61, 6271
+62, 6271
+63, 6271
+64, 6271
+65, 6271
+66, 6271
+67, 6271
+68, 6271
+69, 6271
+70, 6271
+71, 6271
+72, 6271
+73, 6271
+74, 6271
+75, 6271
+76, 6271
+77, 6271
+78, 6271
+79, 6271
+80, 6271
+81, 6271
+82, 6271
+83, 6271
+84, 6271
+85, 6271
+86, 6271
+87, 6271
+88, 6271
+89, 6271
+90, 6271
+91, 6271
+92, 6271
+93, 6271
+94, 6271
+95, 6271
+96, 6271
+97, 6271
+98, 6271
+99, 6271
+100, 6271
+101, 6271
+102, 6271
+103, 6271
+104, 6271
+105, 6271
+106, 6271
+107, 6271
+108, 6271
+109, 6271
+110, 6271
+111, 6271
+112, 6271
+113, 6271
+114, 6271
+115, 6271
+116, 6271
+117, 6271
+118, 6271
+119, 6271
+120, 6271
+121, 6271
+122, 6271
+123, 6271
+124, 6271
+125, 6271
+126, 6271
+127, 6271
+128, 6271
+129, 6271
+130, 6271
+131, 6271
+132, 6271
+133, 6271
+134, 6271
+135, 6271
+136, 6271
+137, 6271
+138, 6271
+139, 6271
+140, 6271
+141, 6271
+142, 6271
+143, 6271
+144, 6271
+145, 6271
+146, 6271
+147, 6271
+148, 6271
+149, 6271
+150, 6271
+151, 6271
+152, 6271
+153, 6271
+154, 6271
+155, 6271
+156, 6271
+157, 6271
+158, 6271
+159, 6271
+160, 6271
+161, 6271
+162, 6271
+163, 6271
+164, 6271
+165, 6271
+166, 6271
+167, 6271
+168, 6271
+169, 6271
+170, 6271
+171, 6271
+172, 6271
+173, 6271
+174, 6271
+175, 6271
+176, 6271
+177, 6271
+178, 6271
+179, 6271
+180, 6271
+181, 6271
+182, 6271
+183, 6271
+184, 6271
+185, 6271
+186, 6271
+187, 6271
+188, 6271
+189, 6271
+190, 6271
+191, 6271
+192, 6271
+193, 6271
+194, 6271
+195, 6271
+196, 6271
+197, 6271
+198, 6271
+199, 6271
+200, 6271
+201, 6271
+202, 6271
+203, 6271
+204, 6271
+205, 6271
+206, 6271
+207, 6271
+208, 6271
+209, 6271
+210, 6271
+211, 6271
+212, 6271
+213, 6271
+214, 6271
+215, 6271
+216, 6271
+217, 6271
+218, 6271
+219, 6271
+220, 6271
+221, 6271
+222, 6271
+223, 6271
+224, 6271
+225, 6271
+226, 6271
+227, 6271
+228, 6271
+229, 6271
+230, 6271
+231, 6271
+232, 6271
+233, 6271
+234, 6271
+235, 6271
+236, 6271
+237, 6271
+238, 6271
+239, 6271
+240, 6271
+241, 6271
+242, 6271
+243, 6271
+244, 6271
+245, 6271
+246, 6271
+247, 6271
+248, 6271
+249, 6271
+250, 6271
+251, 6271
+252, 6271
+253, 6271
+254, 6271
+255, 6271
+256, 6271
+257, 6271
+258, 6271
+259, 6271
+260, 6271
+261, 6271
+262, 6271
+263, 6271
+264, 6271
+265, 6271
+266, 6271
+267, 6271
+268, 6271
+269, 6271
+270, 6271
+271, 6271
+272, 6271
+273, 6271
+274, 6271
+275, 6271
+276, 6271
+277, 6271
+278, 6271
+279, 6271
+280, 6271
+281, 6271
+282, 6271
+283, 6271
+284, 6271
+285, 6271
+286, 6271
+287, 6271
+288, 6271
+289, 6271
+290, 6271
+291, 6271
+292, 6271
+293, 6271
+294, 6271
+295, 6271
+296, 6271
+297, 6271
+298, 6271
+299, 6271
+300, 6271
+301, 6271
+302, 6271
+303, 6271
+304, 6271
+305, 6271
+306, 6271
+307, 6271
+308, 6271
+309, 6271
+310, 6271
+311, 6271
+312, 6271
+313, 6271
+314, 6271
+315, 6271
+316, 6271
+317, 6271
+318, 6271
+319, 6271
+320, 6271
+321, 6271
+322, 6271
+323, 6271
+324, 6271
+325, 6271
+326, 6271
+327, 6271
+328, 6271
+329, 6271
+330, 6271
+331, 6271
+332, 6271
+333, 6271
+334, 6271
+335, 6271
+336, 6271
+337, 6271
+338, 6271
+339, 6271
+340, 6271
+341, 6271
+342, 6271
+343, 6271
+344, 6271
+345, 6271
+346, 6271
+347, 6271
+348, 6271
+349, 6271
+350, 6271
+351, 6271
+352, 6271
+353, 6271
+354, 6271
+355, 6271
+356, 6271
+357, 6271
+358, 6271
+359, 6271
+360, 6271
+361, 6271
+362, 6271
+363, 6271
+364, 6271
+365, 6271
+366, 6271
+367, 6271
+368, 6271
+369, 6271
+370, 6271
+371, 6271
+372, 6271
+373, 6271
+374, 6271
+375, 6271
+376, 6271
+377, 6271
+378, 6271
+379, 6271
+380, 6271
+381, 6271
+382, 6271
+383, 6271
+384, 6271
+385, 6271
+386, 6271
+387, 6271
+388, 6271
+389, 6271
+390, 6271
+391, 6271
+392, 6271
+393, 6271
+394, 6271
+395, 6271
+396, 6271
+397, 6271
+398, 6271
+399, 6271
+400, 6271
+401, 6271
+402, 6271
+403, 6271
+404, 6271
+405, 6271
+406, 6271
+407, 6271
+408, 6271
+409, 6271
+410, 6271
+411, 6271
+412, 6271
+413, 6271
+414, 6271
+415, 6271
+416, 6271
+417, 6271
+418, 6271
+419, 6271
+420, 6271
+421, 6271
+422, 6271
+423, 6271
+424, 6271
+425, 6271
+426, 6271
+427, 6271
+428, 6271
+429, 6271
+430, 6271
+431, 6271
+432, 6271
+433, 6271
+434, 6271
+435, 6271
+436, 6271
+437, 6271
+438, 6271
+439, 6271
+440, 6271
+441, 6271
+442, 6271
+443, 6271
+444, 6271
+445, 6271
+446, 6271
+447, 6271
+448, 6271
+449, 6271
+450, 6271
+451, 6271
+452, 6271
+453, 6271
+454, 6271
+455, 6271
+456, 6271
+457, 6271
+458, 6271
+459, 6271
+460, 6271
+461, 6271
+462, 6271
+463, 6271
+464, 6271
+465, 6271
+466, 6271
+467, 6271
+468, 6271
+469, 6271
+470, 6271
+471, 6271
+472, 6271
+473, 6271
+474, 6271
+475, 6271
+476, 6271
+477, 6271
+478, 6271
+479, 6271
+480, 6271
+481, 6271
+482, 6271
+483, 6271
+484, 6271
+485, 6271
+486, 6271
+487, 6271
+488, 6271
+489, 6271
+490, 6271
+491, 6271
+492, 6271
+493, 6271
+494, 6271
+495, 6271
+496, 6271
+497, 6271
+498, 6271
+499, 6271
+500, 6271
+501, 6271
+502, 6271
+503, 6271
+504, 6271
+505, 6271
+506, 6271
+507, 6271
+508, 6271
+509, 6271
+510, 6271
+511, 6271
+512, 6271
+513, 6271
+514, 6271
+515, 6271
+516, 6271
+517, 6271
+518, 6271
+519, 6271
+520, 6271
+521, 6271
+522, 6271
+523, 6271
+524, 6271
+525, 6271
+526, 6271
+527, 6271
+528, 6271
+529, 6271
+530, 6271
+531, 6271
+532, 6271
+533, 6271
+534, 6271
+535, 6271
+536, 6271
+537, 6271
+538, 6271
+539, 6271
+540, 6271
+541, 6271
+542, 6271
+543, 6271
+544, 6271
+545, 6271
+546, 6271
+547, 6271
+548, 6271
+549, 6271
+550, 6271
+551, 6271
+552, 6271
+553, 6271
+554, 6271
+555, 6271
+556, 6271
+557, 6271
+558, 6271
+559, 6271
+560, 6271
+561, 6271
+562, 6271
+563, 6271
+564, 6271
+565, 6271
+566, 6271
+567, 6271
+568, 6271
+569, 6271
+570, 6271
+571, 6271
+572, 6271
+573, 6271
+574, 6271
+575, 6271
+576, 6271
+577, 6271
+578, 6271
+579, 6271
+580, 6271
+581, 6271
+582, 6271
+583, 6271
+584, 6271
+585, 6271
+586, 6271
+587, 6271
+588, 6271
+589, 6271
+590, 6271
+591, 6271
+592, 6271
+593, 6271
+594, 6271
+595, 6271
+596, 6271
+597, 6271
+598, 6271
+599, 6271
+600, 6271
+601, 6271
+602, 6271
+603, 6271
+604, 6271
+605, 6271
+606, 6271
+607, 6271
+608, 6271
+609, 6271
+610, 6271
+611, 6271
+612, 6271
+613, 6271
+614, 6271
+615, 6271
+616, 6271
+617, 6271
+618, 6271
+619, 6271
+620, 6271
+621, 6271
+622, 6271
+623, 6271
+624, 6271
+625, 6271
+626, 6271
+627, 6271
+628, 6271
+629, 6271
+630, 6271
+631, 6271
+632, 6271
+633, 6271
+634, 6271
+635, 6271
+636, 6271
+637, 6271
+638, 6271
+639, 6271
+640, 6271
+641, 6271
+642, 6271
+643, 6271
+644, 6271
+645, 6271
+646, 6271
+647, 6271
+648, 6271
+649, 6271
+650, 6271
+651, 6271
+652, 6271
+653, 6271
+654, 6271
+655, 6271
+656, 6271
+657, 6271
+658, 6271
+659, 6271
+660, 6271
+661, 6271
+662, 6271
+663, 6271
+664, 6271
+665, 6271
+666, 6271
+667, 6271
+668, 6271
+669, 6271
+670, 6271
+671, 6271
+672, 6271
+673, 6271
+674, 6271
+675, 6271
+676, 6271
+677, 6271
+678, 6271
+679, 6271
+680, 6271
+681, 6271
+682, 6271
+683, 6271
+684, 6271
+685, 6271
+686, 6271
+687, 6271
+688, 6271
+689, 6271
+690, 6271
+691, 6271
+692, 6271
+693, 6271
+694, 6271
+695, 6271
+696, 6271
+697, 6271
+698, 6271
+699, 6271
+700, 6271
+701, 6271
+702, 6271
+703, 6271
+704, 6271
+705, 6271
+706, 6271
+707, 6271
+708, 6271
+709, 6271
+710, 6271
+711, 6271
+712, 6271
+713, 6271
+714, 6271
+715, 6271
+716, 6271
+717, 6271
+718, 6271
+719, 6271
+720, 6271
+721, 6271
+722, 6271
+723, 6271
+724, 6271
+725, 6271
+726, 6271
+727, 6271
+728, 6271
+729, 6271
+730, 6271
+731, 6271
+732, 6271
+733, 6271
+734, 6271
+735, 6271
+736, 6271
+737, 6271
+738, 6271
+739, 6271
+740, 6271
+741, 6271
+742, 6271
+743, 6271
+744, 6271
+745, 6271
+746, 6271
+747, 6271
+748, 6271
+749, 6271
+750, 6271
+751, 6271
+752, 6271
+753, 6271
+754, 6271
+755, 6271
+756, 6271
+757, 6271
+758, 6271
+759, 6271
+760, 6271
+761, 6271
+762, 6271
+763, 6271
+764, 6271
+765, 6271
+766, 6271
+767, 6271
+768, 6271
+769, 6271
+770, 6271
+771, 6271
+772, 6271
+773, 6271
+774, 6271
+775, 6271
+776, 6271
+777, 6271
+778, 6271
+779, 6271
+780, 6271
+781, 6271
+782, 6271
+783, 6271
+784, 6271
+785, 6271
+786, 6271
+787, 6271
+788, 6271
+789, 6271
+790, 6271
+791, 6271
+792, 6271
+793, 6271
+794, 6271
+795, 6271
+796, 6271
+797, 6271
+798, 6271
+799, 6271
+800, 6271
+801, 6271
+802, 6271
+803, 6271
+804, 6271
+805, 6271
+806, 6271
+807, 6271
+808, 6271
+809, 6271
+810, 6271
+811, 6271
+812, 6271
+813, 6271
+814, 6271
+815, 6271
+816, 6271
+817, 6271
+818, 6271
+819, 6271
+820, 6271
+821, 6271
+822, 6271
+823, 6271
+824, 6271
+825, 6271
+826, 6271
+827, 6271
+828, 6271
+829, 6271
+830, 6271
+831, 6271
+832, 6271
+833, 6271
+834, 6271
+835, 6271
+836, 6271
+837, 6271
+838, 6271
+839, 6271
+840, 6271
+841, 6271
+842, 6271
+843, 6271
+844, 6271
+845, 6271
+846, 6271
+847, 6271
+848, 6271
+849, 6271
+850, 6271
+851, 6271
+852, 6271
+853, 6271
+854, 6271
+855, 6271
+856, 6271
+857, 6271
+858, 6271
+859, 6271
+860, 6271
+861, 6271
+862, 6271
+863, 6271
+864, 6271
+865, 6271
+866, 6271
+867, 6271
+868, 6271
+869, 6271
+870, 6271
+871, 6271
+872, 6271
+873, 6271
+874, 6271
+875, 6271
+876, 6271
+877, 6271
+878, 6271
+879, 6271
+880, 6271
+881, 6271
+882, 6271
+883, 6271
+884, 6271
+885, 6271
+886, 6271
+887, 6271
+888, 6271
+889, 6271
+890, 6271
+891, 6271
+892, 6271
+893, 6271
+894, 6271
+895, 6271
+896, 6271
+897, 6271
+898, 6271
+899, 6271
+900, 6271
+901, 6271
+902, 6271
+903, 6271
+904, 6271
+905, 6271
+906, 6271
+907, 6271
+908, 6271
+909, 6271
+910, 6271
+911, 6271
+912, 6271
+913, 6271
+914, 6271
+915, 6271
+916, 6271
+917, 6271
+918, 6271
+919, 6271
+920, 6271
+921, 6271
+922, 6271
+923, 6271
+924, 6271
+925, 6271
+926, 6271
+927, 6271
+928, 6271
+929, 6271
+930, 6271
+931, 6271
+932, 6271
+933, 6271
+934, 6271
+935, 6271
+936, 6271
+937, 6271
+938, 6271
+939, 6271
+940, 6271
+941, 6271
+942, 6271
+943, 6271
+944, 6271
+945, 6271
+946, 6271
+947, 6271
+948, 6271
+949, 6271
+950, 6271
+951, 6271
+952, 6271
+953, 6271
+954, 6271
+955, 6271
+956, 6271
+957, 6271
+958, 6271
+959, 6271
+960, 6271
+961, 6271
+962, 6271
+963, 6271
+964, 6271
+965, 6271
+966, 6271
+967, 6271
+968, 6271
+969, 6271
+970, 6271
+971, 6271
+972, 6271
+973, 6271
+974, 6271
+975, 6271
+976, 6271
+977, 6271
+978, 6271
+979, 6271
+980, 6271
+981, 6271
+982, 6271
+983, 6271
+984, 6271
+985, 6271
+986, 6271
+987, 6271
+988, 6271
+989, 6271
+990, 6271
+991, 6271
+992, 6271
+993, 6271
+994, 6271
+995, 6271
+996, 6271
+997, 6271
+998, 6271
+999, 6271
+### RESULTS ###
+benchmark: back-to-back memory access as described by lmbench and
+           confirms there is no data cache, distance 64
+description: back-to-back attempts to blow out the data cache
+             by accessing at the start of each possible block
+0, 6271
+1, 6271
+2, 6271
+3, 6271
+4, 6271
+5, 6271
+6, 6271
+7, 6271
+8, 6271
+9, 6271
+10, 6271
+11, 6271
+12, 6271
+13, 6271
+14, 6271
+15, 6271
+16, 6271
+17, 6271
+18, 6271
+19, 6271
+20, 6271
+21, 6271
+22, 6271
+23, 6271
+24, 6271
+25, 6271
+26, 6271
+27, 6271
+28, 6271
+29, 6271
+30, 6271
+31, 6271
+32, 6271
+33, 6271
+34, 6271
+35, 6271
+36, 6271
+37, 6271
+38, 6271
+39, 6271
+40, 6271
+41, 6271
+42, 6271
+43, 6271
+44, 6271
+45, 6271
+46, 6271
+47, 6271
+48, 6271
+49, 6271
+50, 6271
+51, 6271
+52, 6271
+53, 6271
+54, 6271
+55, 6271
+56, 6271
+57, 6271
+58, 6271
+59, 6271
+60, 6271
+61, 6271
+62, 6271
+63, 6271
+64, 6271
+65, 6271
+66, 6271
+67, 6271
+68, 6271
+69, 6271
+70, 6271
+71, 6271
+72, 6271
+73, 6271
+74, 6271
+75, 6271
+76, 6271
+77, 6271
+78, 6271
+79, 6271
+80, 6271
+81, 6271
+82, 6271
+83, 6271
+84, 6271
+85, 6271
+86, 6271
+87, 6271
+88, 6271
+89, 6271
+90, 6271
+91, 6271
+92, 6271
+93, 6271
+94, 6271
+95, 6271
+96, 6271
+97, 6271
+98, 6271
+99, 6271
+100, 6271
+101, 6271
+102, 6271
+103, 6271
+104, 6271
+105, 6271
+106, 6271
+107, 6271
+108, 6271
+109, 6271
+110, 6271
+111, 6271
+112, 6271
+113, 6271
+114, 6271
+115, 6271
+116, 6271
+117, 6271
+118, 6271
+119, 6271
+120, 6271
+121, 6271
+122, 6271
+123, 6271
+124, 6271
+125, 6271
+126, 6271
+127, 6271
+128, 6271
+129, 6271
+130, 6271
+131, 6271
+132, 6271
+133, 6271
+134, 6271
+135, 6271
+136, 6271
+137, 6271
+138, 6271
+139, 6271
+140, 6271
+141, 6271
+142, 6271
+143, 6271
+144, 6271
+145, 6271
+146, 6271
+147, 6271
+148, 6271
+149, 6271
+150, 6271
+151, 6271
+152, 6271
+153, 6271
+154, 6271
+155, 6271
+156, 6271
+157, 6271
+158, 6271
+159, 6271
+160, 6271
+161, 6271
+162, 6271
+163, 6271
+164, 6271
+165, 6271
+166, 6271
+167, 6271
+168, 6271
+169, 6271
+170, 6271
+171, 6271
+172, 6271
+173, 6271
+174, 6271
+175, 6271
+176, 6271
+177, 6271
+178, 6271
+179, 6271
+180, 6271
+181, 6271
+182, 6271
+183, 6271
+184, 6271
+185, 6271
+186, 6271
+187, 6271
+188, 6271
+189, 6271
+190, 6271
+191, 6271
+192, 6271
+193, 6271
+194, 6271
+195, 6271
+196, 6271
+197, 6271
+198, 6271
+199, 6271
+200, 6271
+201, 6271
+202, 6271
+203, 6271
+204, 6271
+205, 6271
+206, 6271
+207, 6271
+208, 6271
+209, 6271
+210, 6271
+211, 6271
+212, 6271
+213, 6271
+214, 6271
+215, 6271
+216, 6271
+217, 6271
+218, 6271
+219, 6271
+220, 6271
+221, 6271
+222, 6271
+223, 6271
+224, 6271
+225, 6271
+226, 6271
+227, 6271
+228, 6271
+229, 6271
+230, 6271
+231, 6271
+232, 6271
+233, 6271
+234, 6271
+235, 6271
+236, 6271
+237, 6271
+238, 6271
+239, 6271
+240, 6271
+241, 6271
+242, 6271
+243, 6271
+244, 6271
+245, 6271
+246, 6271
+247, 6271
+248, 6271
+249, 6271
+250, 6271
+251, 6271
+252, 6271
+253, 6271
+254, 6271
+255, 6271
+256, 6271
+257, 6271
+258, 6271
+259, 6271
+260, 6271
+261, 6271
+262, 6271
+263, 6271
+264, 6271
+265, 6271
+266, 6271
+267, 6271
+268, 6271
+269, 6271
+270, 6271
+271, 6271
+272, 6271
+273, 6271
+274, 6271
+275, 6271
+276, 6271
+277, 6271
+278, 6271
+279, 6271
+280, 6271
+281, 6271
+282, 6271
+283, 6271
+284, 6271
+285, 6271
+286, 6271
+287, 6271
+288, 6271
+289, 6271
+290, 6271
+291, 6271
+292, 6271
+293, 6271
+294, 6271
+295, 6271
+296, 6271
+297, 6271
+298, 6271
+299, 6271
+300, 6271
+301, 6271
+302, 6271
+303, 6271
+304, 6271
+305, 6271
+306, 6271
+307, 6271
+308, 6271
+309, 6271
+310, 6271
+311, 6271
+312, 6271
+313, 6271
+314, 6271
+315, 6271
+316, 6271
+317, 6271
+318, 6271
+319, 6271
+320, 6271
+321, 6271
+322, 6271
+323, 6271
+324, 6271
+325, 6271
+326, 6271
+327, 6271
+328, 6271
+329, 6271
+330, 6271
+331, 6271
+332, 6271
+333, 6271
+334, 6271
+335, 6271
+336, 6271
+337, 6271
+338, 6271
+339, 6271
+340, 6271
+341, 6271
+342, 6271
+343, 6271
+344, 6271
+345, 6271
+346, 6271
+347, 6271
+348, 6271
+349, 6271
+350, 6271
+351, 6271
+352, 6271
+353, 6271
+354, 6271
+355, 6271
+356, 6271
+357, 6271
+358, 6271
+359, 6271
+360, 6271
+361, 6271
+362, 6271
+363, 6271
+364, 6271
+365, 6271
+366, 6271
+367, 6271
+368, 6271
+369, 6271
+370, 6271
+371, 6271
+372, 6271
+373, 6271
+374, 6271
+375, 6271
+376, 6271
+377, 6271
+378, 6271
+379, 6271
+380, 6271
+381, 6271
+382, 6271
+383, 6271
+384, 6271
+385, 6271
+386, 6271
+387, 6271
+388, 6271
+389, 6271
+390, 6271
+391, 6271
+392, 6271
+393, 6271
+394, 6271
+395, 6271
+396, 6271
+397, 6271
+398, 6271
+399, 6271
+400, 6271
+401, 6271
+402, 6271
+403, 6271
+404, 6271
+405, 6271
+406, 6271
+407, 6271
+408, 6271
+409, 6271
+410, 6271
+411, 6271
+412, 6271
+413, 6271
+414, 6271
+415, 6271
+416, 6271
+417, 6271
+418, 6271
+419, 6271
+420, 6271
+421, 6271
+422, 6271
+423, 6271
+424, 6271
+425, 6271
+426, 6271
+427, 6271
+428, 6271
+429, 6271
+430, 6271
+431, 6271
+432, 6271
+433, 6271
+434, 6271
+435, 6271
+436, 6271
+437, 6271
+438, 6271
+439, 6271
+440, 6271
+441, 6271
+442, 6271
+443, 6271
+444, 6271
+445, 6271
+446, 6271
+447, 6271
+448, 6271
+449, 6271
+450, 6271
+451, 6271
+452, 6271
+453, 6271
+454, 6271
+455, 6271
+456, 6271
+457, 6271
+458, 6271
+459, 6271
+460, 6271
+461, 6271
+462, 6271
+463, 6271
+464, 6271
+465, 6271
+466, 6271
+467, 6271
+468, 6271
+469, 6271
+470, 6271
+471, 6271
+472, 6271
+473, 6271
+474, 6271
+475, 6271
+476, 6271
+477, 6271
+478, 6271
+479, 6271
+480, 6271
+481, 6271
+482, 6271
+483, 6271
+484, 6271
+485, 6271
+486, 6271
+487, 6271
+488, 6271
+489, 6271
+490, 6271
+491, 6271
+492, 6271
+493, 6271
+494, 6271
+495, 6271
+496, 6271
+497, 6271
+498, 6271
+499, 6271
+500, 6271
+501, 6271
+502, 6271
+503, 6271
+504, 6271
+505, 6271
+506, 6271
+507, 6271
+508, 6271
+509, 6271
+510, 6271
+511, 6271
+512, 6271
+513, 6271
+514, 6271
+515, 6271
+516, 6271
+517, 6271
+518, 6271
+519, 6271
+520, 6271
+521, 6271
+522, 6271
+523, 6271
+524, 6271
+525, 6271
+526, 6271
+527, 6271
+528, 6271
+529, 6271
+530, 6271
+531, 6271
+532, 6271
+533, 6271
+534, 6271
+535, 6271
+536, 6271
+537, 6271
+538, 6271
+539, 6271
+540, 6271
+541, 6271
+542, 6271
+543, 6271
+544, 6271
+545, 6271
+546, 6271
+547, 6271
+548, 6271
+549, 6271
+550, 6271
+551, 6271
+552, 6271
+553, 6271
+554, 6271
+555, 6271
+556, 6271
+557, 6271
+558, 6271
+559, 6271
+560, 6271
+561, 6271
+562, 6271
+563, 6271
+564, 6271
+565, 6271
+566, 6271
+567, 6271
+568, 6271
+569, 6271
+570, 6271
+571, 6271
+572, 6271
+573, 6271
+574, 6271
+575, 6271
+576, 6271
+577, 6271
+578, 6271
+579, 6271
+580, 6271
+581, 6271
+582, 6271
+583, 6271
+584, 6271
+585, 6271
+586, 6271
+587, 6271
+588, 6271
+589, 6271
+590, 6271
+591, 6271
+592, 6271
+593, 6271
+594, 6271
+595, 6271
+596, 6271
+597, 6271
+598, 6271
+599, 6271
+600, 6271
+601, 6271
+602, 6271
+603, 6271
+604, 6271
+605, 6271
+606, 6271
+607, 6271
+608, 6271
+609, 6271
+610, 6271
+611, 6271
+612, 6271
+613, 6271
+614, 6271
+615, 6271
+616, 6271
+617, 6271
+618, 6271
+619, 6271
+620, 6271
+621, 6271
+622, 6271
+623, 6271
+624, 6271
+625, 6271
+626, 6271
+627, 6271
+628, 6271
+629, 6271
+630, 6271
+631, 6271
+632, 6271
+633, 6271
+634, 6271
+635, 6271
+636, 6271
+637, 6271
+638, 6271
+639, 6271
+640, 6271
+641, 6271
+642, 6271
+643, 6271
+644, 6271
+645, 6271
+646, 6271
+647, 6271
+648, 6271
+649, 6271
+650, 6271
+651, 6271
+652, 6271
+653, 6271
+654, 6271
+655, 6271
+656, 6271
+657, 6271
+658, 6271
+659, 6271
+660, 6271
+661, 6271
+662, 6271
+663, 6271
+664, 6271
+665, 6271
+666, 6271
+667, 6271
+668, 6271
+669, 6271
+670, 6271
+671, 6271
+672, 6271
+673, 6271
+674, 6271
+675, 6271
+676, 6271
+677, 6271
+678, 6271
+679, 6271
+680, 6271
+681, 6271
+682, 6271
+683, 6271
+684, 6271
+685, 6271
+686, 6271
+687, 6271
+688, 6271
+689, 6271
+690, 6271
+691, 6271
+692, 6271
+693, 6271
+694, 6271
+695, 6271
+696, 6271
+697, 6271
+698, 6271
+699, 6271
+700, 6271
+701, 6271
+702, 6271
+703, 6271
+704, 6271
+705, 6271
+706, 6271
+707, 6271
+708, 6271
+709, 6271
+710, 6271
+711, 6271
+712, 6271
+713, 6271
+714, 6271
+715, 6271
+716, 6271
+717, 6271
+718, 6271
+719, 6271
+720, 6271
+721, 6271
+722, 6271
+723, 6271
+724, 6271
+725, 6271
+726, 6271
+727, 6271
+728, 6271
+729, 6271
+730, 6271
+731, 6271
+732, 6271
+733, 6271
+734, 6271
+735, 6271
+736, 6271
+737, 6271
+738, 6271
+739, 6271
+740, 6271
+741, 6271
+742, 6271
+743, 6271
+744, 6271
+745, 6271
+746, 6271
+747, 6271
+748, 6271
+749, 6271
+750, 6271
+751, 6271
+752, 6271
+753, 6271
+754, 6271
+755, 6271
+756, 6271
+757, 6271
+758, 6271
+759, 6271
+760, 6271
+761, 6271
+762, 6271
+763, 6271
+764, 6271
+765, 6271
+766, 6271
+767, 6271
+768, 6271
+769, 6271
+770, 6271
+771, 6271
+772, 6271
+773, 6271
+774, 6271
+775, 6271
+776, 6271
+777, 6271
+778, 6271
+779, 6271
+780, 6271
+781, 6271
+782, 6271
+783, 6271
+784, 6271
+785, 6271
+786, 6271
+787, 6271
+788, 6271
+789, 6271
+790, 6271
+791, 6271
+792, 6271
+793, 6271
+794, 6271
+795, 6271
+796, 6271
+797, 6271
+798, 6271
+799, 6271
+800, 6271
+801, 6271
+802, 6271
+803, 6271
+804, 6271
+805, 6271
+806, 6271
+807, 6271
+808, 6271
+809, 6271
+810, 6271
+811, 6271
+812, 6271
+813, 6271
+814, 6271
+815, 6271
+816, 6271
+817, 6271
+818, 6271
+819, 6271
+820, 6271
+821, 6271
+822, 6271
+823, 6271
+824, 6271
+825, 6271
+826, 6271
+827, 6271
+828, 6271
+829, 6271
+830, 6271
+831, 6271
+832, 6271
+833, 6271
+834, 6271
+835, 6271
+836, 6271
+837, 6271
+838, 6271
+839, 6271
+840, 6271
+841, 6271
+842, 6271
+843, 6271
+844, 6271
+845, 6271
+846, 6271
+847, 6271
+848, 6271
+849, 6271
+850, 6271
+851, 6271
+852, 6271
+853, 6271
+854, 6271
+855, 6271
+856, 6271
+857, 6271
+858, 6271
+859, 6271
+860, 6271
+861, 6271
+862, 6271
+863, 6271
+864, 6271
+865, 6271
+866, 6271
+867, 6271
+868, 6271
+869, 6271
+870, 6271
+871, 6271
+872, 6271
+873, 6271
+874, 6271
+875, 6271
+876, 6271
+877, 6271
+878, 6271
+879, 6271
+880, 6271
+881, 6271
+882, 6271
+883, 6271
+884, 6271
+885, 6271
+886, 6271
+887, 6271
+888, 6271
+889, 6271
+890, 6271
+891, 6271
+892, 6271
+893, 6271
+894, 6271
+895, 6271
+896, 6271
+897, 6271
+898, 6271
+899, 6271
+900, 6271
+901, 6271
+902, 6271
+903, 6271
+904, 6271
+905, 6271
+906, 6271
+907, 6271
+908, 6271
+909, 6271
+910, 6271
+911, 6271
+912, 6271
+913, 6271
+914, 6271
+915, 6271
+916, 6271
+917, 6271
+918, 6271
+919, 6271
+920, 6271
+921, 6271
+922, 6271
+923, 6271
+924, 6271
+925, 6271
+926, 6271
+927, 6271
+928, 6271
+929, 6271
+930, 6271
+931, 6271
+932, 6271
+933, 6271
+934, 6271
+935, 6271
+936, 6271
+937, 6271
+938, 6271
+939, 6271
+940, 6271
+941, 6271
+942, 6271
+943, 6271
+944, 6271
+945, 6271
+946, 6271
+947, 6271
+948, 6271
+949, 6271
+950, 6271
+951, 6271
+952, 6271
+953, 6271
+954, 6271
+955, 6271
+956, 6271
+957, 6271
+958, 6271
+959, 6271
+960, 6271
+961, 6271
+962, 6271
+963, 6271
+964, 6271
+965, 6271
+966, 6271
+967, 6271
+968, 6271
+969, 6271
+970, 6271
+971, 6271
+972, 6271
+973, 6271
+974, 6271
+975, 6271
+976, 6271
+977, 6271
+978, 6271
+979, 6271
+980, 6271
+981, 6271
+982, 6271
+983, 6271
+984, 6271
+985, 6271
+986, 6271
+987, 6271
+988, 6271
+989, 6271
+990, 6271
+991, 6271
+992, 6271
+993, 6271
+994, 6271
+995, 6271
+996, 6271
+997, 6271
+998, 6271
+999, 6271
