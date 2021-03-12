@@ -81,6 +81,7 @@ int main(void){
 
   printf("Test 4: Always taken\n");
   for(int i = 0; i < 32; i++){
+    /*
     //li, mv, j
     //lw, beqz taken, addi, beqz not taken
     volatile int temp = 0;
@@ -94,8 +95,32 @@ int main(void){
         printf("Not supposed to be not taken\n");
       }
     }
+    */
+
+#ifdef __arm__
+    printf("Arm: test4 not done\n");
+    break;
+#else
+    int counter=3, temp=11;
+    start = perf_cycles();
+    asm ("#test 4 asm start");
+    asm volatile("\
+    li %0,12\n\
+    li %1,1000\n\
+    startloop:\n\
+    bnez %0,skipped#skip addi-12\n\
+    addi %0,%0,-12\n\
+    skipped:\n\
+    addi %1,%1,-1\n\
+    bnez %1,startloop#back to bnez %0\
+    "
+    : "=r"(temp), "=r" (counter)
+    );
+    asm ("#test 4 asm end");
     end = perf_cycles();
+    //printf("check%d,%d\n", counter, temp);
     printf("\t%d,\t%d\n", i, end - start);
+#endif
   }
 
   return 0;
